@@ -46,6 +46,22 @@ Key fields:
 - `GEOID`: 4-digit code (STATEFP + CD119FP)
 - `CD119FP`: District number within state
 
+### CA Assembly Districts (2025, State Lower Chamber)
+California State Assembly district boundaries (80 districts). Shown as purple outlines. Pre-filtered to California.
+
+Key fields:
+- `NAMELSAD`: Full district name (e.g., "State Assembly District 1")
+- `SLDLST`: Assembly district code
+- `GEOID`: Full geographic identifier
+
+### CA Senate Districts (2025, State Upper Chamber)
+California State Senate district boundaries (40 districts). Shown as dark orange outlines. Pre-filtered to California.
+
+Key fields:
+- `NAMELSAD`: Full district name (e.g., "State Senate District 1")
+- `SLDUST`: Senate district code
+- `GEOID`: Full geographic identifier
+
 ## SQL Query Guidelines
 
 The DuckDB instance is pre-configured with:

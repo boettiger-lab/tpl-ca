@@ -77,6 +77,42 @@
                     "tooltip_fields": ["NAMELSAD", "GEOID", "STATEFP"]
                 }
             ]
+        },
+        {
+            "collection_id": "census-2025-sldl",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json",
+            "assets": [
+                {
+                    "id": "pmtiles",
+                    "display_name": "CA Assembly Districts",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 1.5
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
+                    "tooltip_fields": ["NAMELSAD", "GEOID", "SLDLST"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2025-sldu",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json",
+            "assets": [
+                {
+                    "id": "pmtiles",
+                    "display_name": "CA Senate Districts",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#BF360C",
+                        "line-width": 1.5
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
+                    "tooltip_fields": ["NAMELSAD", "GEOID", "SLDUST"]
+                }
+            ]
         }
     ]
 }

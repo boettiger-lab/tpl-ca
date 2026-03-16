@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tpl-ca
+  labels:
+    app: tpl-ca
+spec:
+  type: ClusterIP
+  selector:
+    app: tpl-ca
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http

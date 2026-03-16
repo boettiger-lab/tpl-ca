@@ -1,0 +1,82 @@
+{
+    "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
+    "titiler_url": "https://titiler.nrp-nautilus.io",
+    "mcp_url": "https://duckdb-mcp.nrp-nautilus.io/mcp",
+    "view": {
+        "center": [-119.5, 37.5],
+        "zoom": 6
+    },
+    "welcome": {
+        "message": "Hi! I can help you explore California protected lands and conservation data. Try asking:",
+        "examples": [
+            "Tell me about the datasets you have access to.",
+            "What are the top 10 counties by total CPAD-protected acreage?",
+            "Show only open-access protected lands.",
+            "Color the protected lands by managing agency type.",
+            "Which congressional districts have the most irrecoverable carbon?"
+        ]
+    },
+    "collections": [
+        {
+            "collection_id": "cpad-2025b",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/stac-collection.json",
+            "assets": [
+                {
+                    "id": "cpad-holdings-pmtiles",
+                    "display_name": "CPAD Holdings",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "ACCESS_TYP"],
+                            "Open Access", "#26633A",
+                            "Restricted Access", "#F9A825",
+                            "No Public Access", "#B71C1C",
+                            "#757575"
+                        ],
+                        "fill-opacity": 0.65
+                    },
+                    "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACCESS_TYP", "ACRES", "COUNTY"]
+                },
+                {
+                    "id": "cpad-units-pmtiles",
+                    "display_name": "CPAD Units",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#388E3C",
+                        "fill-opacity": 0.5
+                    },
+                    "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACCESS_TYP", "ACRES"]
+                }
+            ]
+        },
+        {
+            "collection_id": "irrecoverable-carbon",
+            "assets": [
+                {
+                    "id": "v2-irrecoverable-2024-cog",
+                    "display_name": "Irrecoverable Carbon (2024)",
+                    "visible": true,
+                    "colormap": "reds",
+                    "rescale": "0,150"
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-cd",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json",
+            "assets": [
+                {
+                    "id": "pmtiles",
+                    "display_name": "Congressional Districts",
+                    "visible": true,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#1565C0",
+                        "line-width": 1.5
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
+                    "tooltip_fields": ["NAMELSAD", "GEOID", "STATEFP"]
+                }
+            ]
+        }
+    ]
+}

@@ -66,8 +66,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json",
             "assets": [
                 {
-                    "id": "pmtiles",
-                    "alias": "congressional-districts",
+                    "id": "cd",
                     "display_name": "Congressional Districts",
                     "visible": true,
                     "default_style": {
@@ -88,8 +87,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json",
             "assets": [
                 {
-                    "id": "pmtiles",
-                    "alias": "assembly-districts",
+                    "id": "sldl",
                     "display_name": "CA Assembly Districts",
                     "visible": false,
                     "default_style": {
@@ -110,8 +108,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json",
             "assets": [
                 {
-                    "id": "pmtiles",
-                    "alias": "senate-districts",
+                    "id": "sldu",
                     "display_name": "CA Senate Districts",
                     "visible": false,
                     "default_style": {

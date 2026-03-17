@@ -68,8 +68,11 @@
                     "id": "pmtiles",
                     "display_name": "Congressional Districts",
                     "visible": true,
-                    "layer_type": "line",
                     "default_style": {
+                        "fill-color": "#1565C0",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
                         "line-color": "#1565C0",
                         "line-width": 1.5
                     },
@@ -86,8 +89,11 @@
                     "id": "pmtiles",
                     "display_name": "CA Assembly Districts",
                     "visible": false,
-                    "layer_type": "line",
                     "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
                         "line-color": "#6A1B9A",
                         "line-width": 1.5
                     },
@@ -104,8 +110,11 @@
                     "id": "pmtiles",
                     "display_name": "CA Senate Districts",
                     "visible": false,
-                    "layer_type": "line",
                     "default_style": {
+                        "fill-color": "#BF360C",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
                         "line-color": "#BF360C",
                         "line-width": 1.5
                     },

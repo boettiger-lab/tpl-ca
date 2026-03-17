@@ -50,6 +50,7 @@
         },
         {
             "collection_id": "irrecoverable-carbon",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
             "assets": [
                 {
                     "id": "v2-irrecoverable-2024-cog",
@@ -66,12 +67,18 @@
             "assets": [
                 {
                     "id": "pmtiles",
+                    "alias": "congressional-districts",
                     "display_name": "Congressional Districts",
                     "visible": true,
                     "default_style": {
                         "fill-color": "#1565C0",
-                        "fill-opacity": 0.3
+                        "fill-opacity": 0.05
                     },
+                    "outline_style": {
+                        "line-color": "#1565C0",
+                        "line-width": 1.5
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
                     "tooltip_fields": ["NAMELSAD", "GEOID", "STATEFP"]
                 }
             ]
@@ -82,11 +89,12 @@
             "assets": [
                 {
                     "id": "pmtiles",
+                    "alias": "assembly-districts",
                     "display_name": "CA Assembly Districts",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#6A1B9A",
-                        "fill-opacity": 0
+                        "fill-opacity": 0.05
                     },
                     "outline_style": {
                         "line-color": "#6A1B9A",
@@ -103,11 +111,12 @@
             "assets": [
                 {
                     "id": "pmtiles",
+                    "alias": "senate-districts",
                     "display_name": "CA Senate Districts",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#BF360C",
-                        "fill-opacity": 0
+                        "fill-opacity": 0.05
                     },
                     "outline_style": {
                         "line-color": "#BF360C",

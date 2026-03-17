@@ -70,13 +70,8 @@
                     "visible": true,
                     "default_style": {
                         "fill-color": "#1565C0",
-                        "fill-opacity": 0
+                        "fill-opacity": 0.3
                     },
-                    "outline_style": {
-                        "line-color": "#1565C0",
-                        "line-width": 1.5
-                    },
-                    "default_filter": ["==", ["get", "STATEFP"], "06"],
                     "tooltip_fields": ["NAMELSAD", "GEOID", "STATEFP"]
                 }
             ]

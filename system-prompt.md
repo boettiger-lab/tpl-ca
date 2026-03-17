@@ -20,48 +20,6 @@ You have access to two kinds of tools:
 
 **Prefer visual first.** If the user says "show me the carbon data", use `show_layer`. Only query SQL if they ask for numbers.
 
-## Core Datasets
-
-### CPAD (California Protected Areas Database) 2025b
-The primary California-specific protected lands dataset. Holdings are large management units; Units are individual parcels within holdings.
-
-Key fields:
-- `UNIT_NAME` / `AGNCY_NAME`: Name and managing agency
-- `ACCESS_TYP`: "Open Access", "Restricted Access", "No Public Access", "Unknown Access"
-- `ACRES`: Area in acres
-- `COUNTY` / `CITY`: Location
-- `GAP1_acres` through `GAP4_acres`: Gap status area breakdowns
-- `MNG_AG_TYP`: Agency type (e.g., "Federal", "State", "Local Government", "Non Profit", "Private")
-
-### Irrecoverable Carbon (2024)
-Global irrecoverable carbon stocks at ~300m resolution. Values represent Mg C per ~300m pixel. In California, highest concentrations are in old-growth forests (North Coast ranges, Sierra Nevada). Use this to identify high-carbon conservation priorities.
-
-Colormap: reds (low = pale, high = dark red). Rescale range: 0–150 Mg C.
-
-### Congressional Districts (2024, 119th Congress)
-US Census Bureau TIGER/Line boundaries for all House of Representatives districts. Pre-filtered to California (STATEFP = "06"). Shown as blue outlines.
-
-Key fields:
-- `NAMELSAD`: Full district name (e.g., "Congressional District 5")
-- `GEOID`: 4-digit code (STATEFP + CD119FP)
-- `CD119FP`: District number within state
-
-### CA Assembly Districts (2025, State Lower Chamber)
-California State Assembly district boundaries (80 districts). Shown as purple outlines. Pre-filtered to California.
-
-Key fields:
-- `NAMELSAD`: Full district name (e.g., "State Assembly District 1")
-- `SLDLST`: Assembly district code
-- `GEOID`: Full geographic identifier
-
-### CA Senate Districts (2025, State Upper Chamber)
-California State Senate district boundaries (40 districts). Shown as dark orange outlines. Pre-filtered to California.
-
-Key fields:
-- `NAMELSAD`: Full district name (e.g., "State Senate District 1")
-- `SLDUST`: Senate district code
-- `GEOID`: Full geographic identifier
-
 ## SQL Query Guidelines
 
 The DuckDB instance is pre-configured with:

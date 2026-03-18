@@ -22,19 +22,14 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/stac-collection.json",
             "assets": [
                 {
-                    "id": "cpad-holdings-pmtiles",
-                    "display_name": "CPAD Holdings",
-                    "visible": true,
+                    "id": "cced-pmtiles",
+                    "display_name": "CPAD Easements",
+                    "visible": false,
                     "default_style": {
-                        "fill-color": ["match", ["get", "ACCESS_TYP"],
-                            "Open Access", "#26633A",
-                            "Restricted Access", "#F9A825",
-                            "No Public Access", "#B71C1C",
-                            "#757575"
-                        ],
-                        "fill-opacity": 0.65
+                        "fill-color": "#1B5E20",
+                        "fill-opacity": 0.5
                     },
-                    "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACCESS_TYP", "ACRES", "COUNTY"]
+                    "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACRES", "COUNTY"]
                 },
                 {
                     "id": "cpad-units-pmtiles",
@@ -49,13 +44,33 @@
             ]
         },
         {
+            "collection_id": "tpl-conservation-almanac-2024",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/stac-collection.json",
+            "assets": [
+                {
+                    "id": "pmtiles",
+                    "display_name": "TPL Conservation Almanac",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "purchase_type"],
+                            "Fee", "#2E7D32",
+                            "Easement", "#1565C0",
+                            "#757575"
+                        ],
+                        "fill-opacity": 0.6
+                    },
+                    "tooltip_fields": ["site", "owner", "owner_type", "manager", "access_type", "purchase_type", "acres", "year", "county"]
+                }
+            ]
+        },
+        {
             "collection_id": "irrecoverable-carbon",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
             "assets": [
                 {
                     "id": "v2-irrecoverable-2024-cog",
                     "display_name": "Irrecoverable Carbon (2024)",
-                    "visible": true,
+                    "visible": false,
                     "colormap": "reds",
                     "rescale": "0,150"
                 }

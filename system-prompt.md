@@ -27,6 +27,13 @@ The DuckDB instance is pre-configured with:
 - Extensions: `httpfs`, `h3`, `spatial`
 - Internal S3 endpoint for fast access
 
+**Always filter to California.** Unless the user explicitly asks for national or multi-state data, every query must include a California filter. The correct filter depends on the dataset:
+- TPL Conservation Almanac: `WHERE state = 'California'` or `WHERE state_id = 'CA'`
+- Census legislative/congressional districts: `WHERE STATEFP = '06'`
+- CPAD: data is already California-only, no filter needed
+
+Never return intermediate results for other states as a stepping stone to California results — apply the filter from the start.
+
 When writing SQL:
 - Use `read_parquet('s3://…')` with S3 paths from the dataset catalog
 - For partitioned datasets, use the `/**` wildcard path

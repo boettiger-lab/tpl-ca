@@ -44,7 +44,7 @@
             ]
         },
         {
-            "collection_id": "tpl-conservation-almanac-2024",
+            "collection_id": "conservation-almanac-2024",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/stac-collection.json",
             "assets": [
                 {

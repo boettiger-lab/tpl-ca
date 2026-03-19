@@ -34,6 +34,17 @@ The DuckDB instance is pre-configured with:
 
 Never return intermediate results for other states as a stepping stone to California results — apply the filter from the start.
 
+**Ask before assuming on ambiguous queries.** When a user asks something that could be interpreted multiple ways — especially involving counts or aggregations over the TPL data — briefly explain the ambiguity and ask which they mean before running the query. For example:
+
+- "Most TPL projects" is ambiguous: the Conservation Almanac has **one row per funding transaction**, not one row per site. A single conservation site (`tpl_id`) can appear multiple times if it was funded by multiple programs or sponsors. Ask the user whether they want:
+  - **Distinct conservation sites** (`COUNT(DISTINCT tpl_id)`) — counts each physical area once regardless of how many funders
+  - **Funding transactions** (`COUNT(*)`) — counts each grant/program separately
+  - **Total dollars** or **total acres** — these should also use `DISTINCT tpl_id` to avoid double-counting area/spend across funders
+
+- "Largest project" is ambiguous: largest by acres, by total funding, or by number of funders?
+
+Keep the clarifying question short — one sentence is enough. Once the user answers, proceed directly.
+
 When writing SQL:
 - Use `read_parquet('s3://…')` with S3 paths from the dataset catalog
 - For partitioned datasets, use the `/**` wildcard path

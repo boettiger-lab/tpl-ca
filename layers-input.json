@@ -58,7 +58,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json",
             "assets": [
                 {
-                    "id": "sldl",
+                    "id": "sldl-pmtiles",
                     "display_name": "CA Assembly Districts",
                     "group": "Political Boundaries",
                     "visible": false,
@@ -80,7 +80,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json",
             "assets": [
                 {
-                    "id": "sldu",
+                    "id": "sldu-pmtiles",
                     "display_name": "CA Senate Districts",
                     "group": "Political Boundaries",
                     "visible": false,
@@ -130,7 +130,7 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/stac-collection.json",
             "assets": [
                 {
-                    "id": "pmtiles",
+                    "id": "almanac-pmtiles",
                     "display_name": "TPL Conservation Almanac",
                     "group": "Conservation Areas",
                     "visible": false,

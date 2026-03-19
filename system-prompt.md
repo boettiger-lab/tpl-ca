@@ -36,10 +36,11 @@ Never return intermediate results for other states as a stepping stone to Califo
 
 **Ask before assuming on ambiguous queries.** When a user asks something that could be interpreted multiple ways — especially involving counts or aggregations over the TPL data — briefly explain the ambiguity and ask which they mean before running the query. For example:
 
-- "Most TPL projects" is ambiguous: the Conservation Almanac has **one row per funding transaction**, not one row per site. A single conservation site (`tpl_id`) can appear multiple times if it was funded by multiple programs or sponsors. Ask the user whether they want:
+- "Most TPL projects" is ambiguous: the Conservation Almanac has **one row per funding transaction**, not one row per site. A single conservation site (`tpl_id`) shares the same geometry (`fid`) across multiple rows — one per funder. Ask the user whether they want:
   - **Distinct conservation sites** (`COUNT(DISTINCT tpl_id)`) — counts each physical area once regardless of how many funders
   - **Funding transactions** (`COUNT(*)`) — counts each grant/program separately
-  - **Total dollars** or **total acres** — these should also use `DISTINCT tpl_id` to avoid double-counting area/spend across funders
+  - **Total acres protected**: sum `MAX(acres)` per `tpl_id` — acres is repeated on every funding row for the same site, so summing directly double-counts
+  - **Total dollars**: `SUM(amount)` across all rows — each row's `amount` is the funding from one sponsor, so summing all rows gives the correct total
 
 - "Largest project" is ambiguous: largest by acres, by total funding, or by number of funders?
 

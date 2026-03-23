@@ -18,6 +18,21 @@
     },
     "collections": [
         {
+            "collection_id": "wetlands-global-unified",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/stac-collection.json",
+            "assets": [
+                {
+                    "id": "glwd-cog-area",
+                    "display_name": "Wetland Area (GLWD)",
+                    "group": "Wetlands",
+                    "visible": false,
+                    "colormap": "blues",
+                    "rescale": "0,250",
+                    "legend_label": "Wetland area (ha)"
+                }
+            ]
+        },
+        {
             "collection_id": "irrecoverable-carbon",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
             "assets": [

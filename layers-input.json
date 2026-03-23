@@ -32,34 +32,34 @@
             ]
         },
         {
-            "collection_id": "census-2024-county",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
-            "assets": [
-                {
-                    "id": "county-pmtiles",
-                    "display_name": "CA Counties",
-                    "group": "Political Boundaries",
-                    "visible": true,
-                    "default_style": {
-                        "fill-color": "#37474F",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#37474F",
-                        "line-width": 1.5
-                    },
-                    "default_filter": ["==", ["get", "STATEFP"], "06"],
-                    "tooltip_fields": ["NAMELSAD", "GEOID", "ALAND"]
-                }
-            ]
-        },
-        {
             "collection_id": "svi-2022",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
             "assets": [
                 {
                     "id": "county-pmtiles",
-                    "display_name": "SVI County (2022)",
+                    "display_name": "SVI (county)",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["interpolate", ["linear"], ["get", "RPL_THEMES"],
+                            0,   "#1A9641",
+                            0.25, "#A6D96A",
+                            0.5,  "#FFFFBF",
+                            0.75, "#FDAE61",
+                            1,   "#D7191C"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.5
+                    },
+                    "default_filter": ["==", ["get", "ST_ABBR"], "CA"],
+                    "tooltip_fields": ["COUNTY", "FIPS", "RPL_THEMES", "ST_ABBR"]
+                },
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "SVI (tract)",
                     "group": "Social Vulnerability",
                     "visible": false,
                     "default_style": {

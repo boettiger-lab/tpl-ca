@@ -76,8 +76,8 @@
                         "line-color": "#555555",
                         "line-width": 0.5
                     },
-                    "default_filter": ["==", ["get", "STATE"], "CA"],
-                    "tooltip_fields": ["LOCATION", "COUNTY", "RPL_THEMES", "RPL_THEME1", "RPL_THEME2", "RPL_THEME3", "RPL_THEME4"]
+                    "default_filter": ["==", ["get", "ST_ABBR"], "CA"],
+                    "tooltip_fields": ["COUNTY", "FIPS", "RPL_THEMES", "ST_ABBR"]
                 }
             ]
         },

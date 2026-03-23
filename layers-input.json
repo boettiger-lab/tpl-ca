@@ -32,6 +32,56 @@
             ]
         },
         {
+            "collection_id": "census-2024-county",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
+            "assets": [
+                {
+                    "id": "county-pmtiles",
+                    "display_name": "CA Counties",
+                    "group": "Political Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#37474F",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#37474F",
+                        "line-width": 1.5
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
+                    "tooltip_fields": ["NAMELSAD", "GEOID", "ALAND"]
+                }
+            ]
+        },
+        {
+            "collection_id": "social-vulnerability-2022-county",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
+            "assets": [
+                {
+                    "id": "county-pmtiles",
+                    "display_name": "SVI County (2022)",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["interpolate", ["linear"], ["get", "RPL_THEMES"],
+                            0,   "#1A9641",
+                            0.25, "#A6D96A",
+                            0.5,  "#FFFFBF",
+                            0.75, "#FDAE61",
+                            1,   "#D7191C"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.5
+                    },
+                    "default_filter": ["==", ["get", "STATE"], "CA"],
+                    "tooltip_fields": ["LOCATION", "COUNTY", "RPL_THEMES", "RPL_THEME1", "RPL_THEME2", "RPL_THEME3", "RPL_THEME4"]
+                }
+            ]
+        },
+        {
             "collection_id": "census-2024-cd",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json",
             "assets": [

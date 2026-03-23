@@ -54,7 +54,7 @@
             ]
         },
         {
-            "collection_id": "social-vulnerability-2022-county",
+            "collection_id": "svi-2022",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
             "assets": [
                 {

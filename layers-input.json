@@ -22,13 +22,11 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/stac-collection.json",
             "assets": [
                 {
-                    "id": "glwd-cog-area",
-                    "display_name": "Wetland Area (GLWD)",
+                    "id": "glwd-main-class-cog",
+                    "display_name": "Wetland Type (GLWD)",
                     "group": "Wetlands",
                     "visible": false,
-                    "colormap": "blues",
-                    "rescale": "0,250",
-                    "legend_label": "Wetland area (ha)"
+                    "legend_type": "categorical"
                 }
             ]
         },

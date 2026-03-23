@@ -66,11 +66,11 @@ LIMIT 15
 
 ```sql
 WITH cpad_hex AS (
-  SELECT h8, UNIT_NAME, AGNCY_NAME
+  SELECT h0, h8, UNIT_NAME, AGNCY_NAME
   FROM read_parquet('s3://public-cpad/cpad-2025b-holdings/hex/**')
 ),
 carbon AS (
-  SELECT h8, carbon
+  SELECT h0, h8, carbon
   FROM read_parquet('s3://public-carbon/irrecoverable-carbon-2024/hex/**')
 )
 SELECT
@@ -78,7 +78,7 @@ SELECT
   c.AGNCY_NAME,
   SUM(ca.carbon) AS total_irrecoverable_carbon_MgC
 FROM cpad_hex c
-JOIN carbon ca ON c.h8 = ca.h8
+JOIN carbon ca ON c.h8 = ca.h8 AND c.h0 = ca.h0
 GROUP BY c.UNIT_NAME, c.AGNCY_NAME
 ORDER BY total_irrecoverable_carbon_MgC DESC
 LIMIT 10
@@ -90,12 +90,12 @@ The hex parquet files include pre-computed H3 columns at multiple resolutions (`
 
 ```sql
 WITH cd_hex AS (
-  SELECT h8, NAMELSAD, GEOID
+  SELECT h0, h8, NAMELSAD, GEOID
   FROM read_parquet('s3://public-census/census-2024/cd/hex/**')
   WHERE STATEFP = '06'
 ),
 carbon AS (
-  SELECT h8, carbon
+  SELECT h0, h8, carbon
   FROM read_parquet('s3://public-carbon/irrecoverable-carbon-2024/hex/**')
 )
 SELECT
@@ -103,7 +103,7 @@ SELECT
   d.GEOID,
   SUM(ca.carbon) AS total_irrecoverable_carbon_MgC
 FROM cd_hex d
-JOIN carbon ca ON d.h8 = ca.h8
+JOIN carbon ca ON d.h8 = ca.h8 AND d.h0 = ca.h0
 GROUP BY d.NAMELSAD, d.GEOID
 ORDER BY total_irrecoverable_carbon_MgC DESC
 LIMIT 15
@@ -121,12 +121,12 @@ Vulnerable carbon uses the same column name (`carbon`) and the same join pattern
 
 ```sql
 WITH cd_hex AS (
-  SELECT h8, NAMELSAD, GEOID
+  SELECT h0, h8, NAMELSAD, GEOID
   FROM read_parquet('s3://public-census/census-2024/cd/hex/**')
   WHERE STATEFP = '06'
 ),
 carbon AS (
-  SELECT h8, carbon
+  SELECT h0, h8, carbon
   FROM read_parquet('s3://public-carbon/vulnerable-carbon-2024/hex/**')
 )
 SELECT
@@ -134,7 +134,7 @@ SELECT
   d.GEOID,
   SUM(ca.carbon) AS total_vulnerable_carbon_MgC
 FROM cd_hex d
-JOIN carbon ca ON d.h8 = ca.h8
+JOIN carbon ca ON d.h8 = ca.h8 AND d.h0 = ca.h0
 GROUP BY d.NAMELSAD, d.GEOID
 ORDER BY total_vulnerable_carbon_MgC DESC
 LIMIT 15

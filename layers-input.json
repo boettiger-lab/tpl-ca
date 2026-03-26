@@ -7,13 +7,14 @@
         "zoom": 6
     },
     "welcome": {
-        "message": "Hi! I can help you explore California protected lands and conservation data. Try asking:",
+        "message": "Hi! I can help CA legislators and advocates explore conservation data by district. Try asking:",
         "examples": [
-            "Tell me about the datasets you have access to.",
-            "What are the top 10 counties by total CPAD-protected acreage?",
-            "Show only open-access protected lands.",
-            "Color the protected lands by managing agency type.",
-            "Which congressional districts have the most irrecoverable carbon?"
+            "Which CA Assembly districts have the most TPL-protected land?",
+            "How much conservation funding has gone to Congressional District 2?",
+            "Which Senate districts have the most farmland easements?",
+            "Show me conservation sites that overlap high-pollution communities using CalEnviroScreen.",
+            "Which congressional districts have the most irrecoverable carbon?",
+            "What share of protected land in my district is open to the public?"
         ]
     },
     "collections": [
@@ -102,7 +103,7 @@
                     "id": "cd",
                     "display_name": "Congressional Districts",
                     "group": "Political Boundaries",
-                    "visible": true,
+                    "visible": false,
                     "default_style": {
                         "fill-color": "#1565C0",
                         "fill-opacity": 0.05
@@ -124,7 +125,7 @@
                     "id": "sldl-pmtiles",
                     "display_name": "CA Assembly Districts",
                     "group": "Political Boundaries",
-                    "visible": false,
+                    "visible": true,
                     "default_style": {
                         "fill-color": "#6A1B9A",
                         "fill-opacity": 0.05
@@ -161,8 +162,35 @@
             ]
         },
         {
-            "collection_id": "cpad-2025b",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/stac-collection.json",
+            "collection_id": "calenviroscreen-5-0",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-calenviroscreen/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ces5-pmtiles",
+                    "display_name": "CalEnviroScreen 5.0",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["interpolate", ["linear"], ["get", "CIscore_Pctl"],
+                            0,   "#1A9641",
+                            25,  "#A6D96A",
+                            50,  "#FFFFBF",
+                            75,  "#FDAE61",
+                            100, "#D7191C"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": ["tract", "county", "ZIP", "CIscore", "CIscore_Pctl", "Pollution_Pctl", "PopChar_Pctl"]
+                }
+            ]
+        },
+        {
+            "collection_id": "cced-2025b",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/cced-stac-collection.json",
             "assets": [
                 {
                     "id": "cced-pmtiles",
@@ -174,9 +202,15 @@
                         "fill-opacity": 0.5
                     },
                     "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACRES", "COUNTY"]
-                },
+                }
+            ]
+        },
+        {
+            "collection_id": "cpad-units-2025b",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/cpad-units-stac-collection.json",
+            "assets": [
                 {
-                    "id": "cpad-units-pmtiles",
+                    "id": "units-pmtiles",
                     "display_name": "CPAD Units",
                     "group": "Conservation Areas",
                     "visible": false,

@@ -12,6 +12,48 @@ When describing Conservation Almanac data, do not say "TPL-protected land" or im
 - "conservation investment in this district"
 - "funding from [program name]" when a specific program is known
 
+### Sponsors and multi-funder sites
+
+**A single conservation site often has multiple sponsors.** The Almanac has one row per funding transaction: if a site received money from three programs, it appears as three rows sharing the same `tpl_id` and `fid`. The `program` column names the funding program, and `amount` is that sponsor's contribution.
+
+This means you can always look up exactly who funded a site and how much each contributed — this is one of the most useful things the agent can do. When a user asks about a specific site, a district's sponsors, or "who paid for this," query the flat parquet directly:
+
+```sql
+-- All sponsors for a named site
+SELECT site, county, year, program, amount, owner, owner_type, purchase_type
+FROM read_parquet('s3://public-tpl/conservation-almanac-2024.parquet')
+WHERE state = 'California'
+  AND site ILIKE '%Eel River%'
+ORDER BY amount DESC
+```
+
+```sql
+-- Sponsor breakdown for all sites in a congressional district (via H3 join)
+WITH cd_hex AS (
+  SELECT DISTINCT h8, h0
+  FROM read_parquet('s3://public-census/census-2024/cd/hex/**')
+  WHERE STATEFP = '06' AND NAMELSAD = 'Congressional District 16'
+),
+tpl AS (
+  SELECT t.tpl_id, t.site, t.program, t.amount, t.acres, t.year
+  FROM read_parquet('s3://public-tpl/conservation-almanac-2024/hex/h0=*/data_0.parquet') t
+  JOIN cd_hex d ON t.h8 = d.h8 AND t.h0 = d.h0
+  WHERE t.state = 'California'
+)
+SELECT program,
+  COUNT(DISTINCT tpl_id) as n_sites,
+  ROUND(SUM(amount)/1e6, 1) as total_funding_M
+FROM tpl
+WHERE program IS NOT NULL AND program NOT IN ('n/a', '')
+GROUP BY program
+ORDER BY total_funding_M DESC
+```
+
+Key reminders:
+- `SUM(amount)` across all rows correctly totals funding — each row's `amount` is one sponsor's contribution
+- `SUM(acres)` double-counts — use `SUM(MAX(acres)) GROUP BY tpl_id` or aggregate acres separately
+- A site with `amount = 0` or null may still be significant — it may be a donation or a transaction where only acreage was recorded
+
 You have access to two kinds of tools:
 
 1. **Map tools** (local) – control what's visible on the interactive map: show/hide layers, filter features, set styles.

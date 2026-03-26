@@ -7,17 +7,96 @@
         "zoom": 6
     },
     "welcome": {
-        "message": "Hi! I can help CA legislators and advocates explore conservation data by district. Try asking:",
+        "message": "Hi! I can help CA legislators and advocates explore land conservation and public investment data by district. Try asking:",
         "examples": [
-            "Which CA Assembly districts have the most TPL-protected land?",
-            "How much conservation funding has gone to Congressional District 2?",
-            "Which Senate districts have the most farmland easements?",
-            "Show me conservation sites that overlap high-pollution communities using CalEnviroScreen.",
-            "Which congressional districts have the most irrecoverable carbon?",
-            "What share of protected land in my district is open to the public?"
+            "Which programs and agencies have funded land conservation in Congressional District 16, and how much?",
+            "Which congressional districts have raised the most conservation funding through ballot measures since 2010?",
+            "Which CA congressional districts have had failed conservation ballot measures, and how much funding was at stake?",
+            "Which Assembly districts have the most protected acreage recorded in the Conservation Almanac?",
+            "How much has the Land and Water Conservation Fund invested in Senate District 2?",
+            "Show me conservation sites that overlap high-pollution communities using CalEnviroScreen."
         ]
     },
     "collections": [
+        {
+            "collection_id": "calfire-2024-firep",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2024/firep/stac-collection.json",
+            "assets": [
+                {
+                    "id": "firep-pmtiles",
+                    "display_name": "Wildfire Perimeters",
+                    "group": "Fire",
+                    "visible": false,
+                    "default_filter": [">=", ["get", "YEAR_"], 2000],
+                    "default_style": {
+                        "fill-color": ["interpolate", ["linear"], ["get", "YEAR_"],
+                            2000, "#FFCCBC",
+                            2015, "#FF7043",
+                            2024, "#B71C1C"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#B71C1C",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": ["FIRE_NAME", "YEAR_", "GIS_ACRES", "AGENCY", "CAUSE"]
+                }
+            ]
+        },
+        {
+            "collection_id": "calfire-2024-rxburn",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2024/rxburn/stac-collection.json",
+            "assets": [
+                {
+                    "id": "rxburn-pmtiles",
+                    "display_name": "Prescribed Burns",
+                    "group": "Fire",
+                    "visible": false,
+                    "default_filter": [">=", ["get", "YEAR_"], 2000],
+                    "default_style": {
+                        "fill-color": "#558B2F",
+                        "fill-opacity": 0.6
+                    },
+                    "outline_style": {
+                        "line-color": "#33691E",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": ["TREATMENT_NAME", "YEAR_", "TREATED_AC", "AGENCY"]
+                }
+            ]
+        },
+        {
+            "collection_id": "landvote",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/landvote/stac-collection.json",
+            "assets": [
+                {
+                    "id": "landvote-pmtiles",
+                    "display_name": "Conservation Ballot Measures",
+                    "group": "Conservation Areas",
+                    "visible": false,
+                    "default_filter": ["all",
+                        ["==", ["get", "state"], "CA"],
+                        ["!=", ["get", "jurisdiction"], "State"],
+                        [">=", ["get", "year"], 2010]
+                    ],
+                    "default_style": {
+                        "fill-color": ["match", ["get", "status"],
+                            "Pass",  "#1B5E20",
+                            "Pass*", "#2E7D32",
+                            "Fail",  "#C62828",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#424242",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": ["municipal", "county", "year", "status", "finance_mechanism", "conservation_funds_approved", "purpose"]
+                }
+            ]
+        },
         {
             "collection_id": "wetlands-global-unified",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/stac-collection.json",

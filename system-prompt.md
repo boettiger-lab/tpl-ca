@@ -50,8 +50,15 @@ ORDER BY total_funding_M DESC
 ```
 
 Key reminders:
-- `SUM(amount)` across all rows correctly totals funding — each row's `amount` is one sponsor's contribution
-- `SUM(acres)` double-counts — use `SUM(MAX(acres)) GROUP BY tpl_id` or aggregate acres separately
+- **Funding:** `SUM(amount)` across all rows correctly totals funding — each row's `amount` is one sponsor's contribution
+- **Acres:** `SUM(acres)` double-counts because acres is repeated on every funding row for the same site. Always deduplicate with a CTE first:
+  ```sql
+  WITH site_acres AS (
+    SELECT tpl_id, MAX(acres) AS acres FROM ... GROUP BY tpl_id
+  )
+  SELECT SUM(acres) AS total_acres FROM site_acres
+  ```
+  **Never write `SUM(MAX(acres))`** — nested aggregate functions are not valid SQL and will error.
 - A site with `amount = 0` or null may still be significant — it may be a donation or a transaction where only acreage was recorded
 
 ## About the LandMark Indigenous Lands Layer
@@ -102,7 +109,7 @@ Never return intermediate results for other states as a stepping stone to Califo
 - "Most TPL projects" is ambiguous: the Conservation Almanac has **one row per funding transaction**, not one row per site. A single conservation site (`tpl_id`) shares the same geometry (`fid`) across multiple rows — one per funder. Ask the user whether they want:
   - **Distinct conservation sites** (`COUNT(DISTINCT tpl_id)`) — counts each physical area once regardless of how many funders
   - **Funding transactions** (`COUNT(*)`) — counts each grant/program separately
-  - **Total acres protected**: sum `MAX(acres)` per `tpl_id` — acres is repeated on every funding row for the same site, so summing directly double-counts
+  - **Total acres protected**: use a CTE to get `MAX(acres)` per `tpl_id` first, then `SUM` — acres is repeated on every funding row for the same site, so summing directly double-counts
   - **Total dollars**: `SUM(amount)` across all rows — each row's `amount` is the funding from one sponsor, so summing all rows gives the correct total
 
 - "Largest project" is ambiguous: largest by acres, by total funding, or by number of funders?

@@ -19,6 +19,48 @@
     },
     "collections": [
         {
+            "collection_id": "wetlands-global-unified",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/stac-collection.json",
+            "assets": [
+                {
+                    "id": "glwd-main-class-cog",
+                    "display_name": "Wetland Type (GLWD)",
+                    "group": "Wetlands",
+                    "visible": false,
+                    "legend_type": "categorical"
+                }
+            ]
+        },
+        {
+            "collection_id": "irrecoverable-carbon",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
+            "assets": [
+                {
+                    "id": "v2-irrecoverable-2024-cog",
+                    "display_name": "Irrecoverable Carbon (2024)",
+                    "group": "Carbon",
+                    "visible": false,
+                    "colormap": "reds",
+                    "rescale": "0,150"
+                }
+            ]
+        },
+        {
+            "collection_id": "mobi-species-richness-all",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+            "assets": [
+                {
+                    "id": "species-richness-all-cog",
+                    "display_name": "MOBI Species Richness",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "ylgn",
+                    "rescale": "1,32",
+                    "legend_label": "Species richness (1–32)"
+                }
+            ]
+        },
+        {
             "collection_id": "calfire-2024-firep",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2024/firep/stac-collection.json",
             "assets": [
@@ -94,33 +136,6 @@
                         "line-width": 0.8
                     },
                     "tooltip_fields": ["municipal", "county", "year", "status", "finance_mechanism", "conservation_funds_approved", "purpose"]
-                }
-            ]
-        },
-        {
-            "collection_id": "wetlands-global-unified",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/stac-collection.json",
-            "assets": [
-                {
-                    "id": "glwd-main-class-cog",
-                    "display_name": "Wetland Type (GLWD)",
-                    "group": "Wetlands",
-                    "visible": false,
-                    "legend_type": "categorical"
-                }
-            ]
-        },
-        {
-            "collection_id": "irrecoverable-carbon",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
-            "assets": [
-                {
-                    "id": "v2-irrecoverable-2024-cog",
-                    "display_name": "Irrecoverable Carbon (2024)",
-                    "group": "Carbon",
-                    "visible": false,
-                    "colormap": "reds",
-                    "rescale": "0,150"
                 }
             ]
         },
@@ -320,21 +335,6 @@
                         "fill-opacity": 0.5
                     },
                     "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACCESS_TYP", "ACRES"]
-                }
-            ]
-        },
-        {
-            "collection_id": "mobi-species-richness-all",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
-            "assets": [
-                {
-                    "id": "species-richness-all-cog",
-                    "display_name": "MOBI Species Richness",
-                    "group": "Biodiversity",
-                    "visible": false,
-                    "colormap": "ylgn",
-                    "rescale": "1,32",
-                    "legend_label": "Species richness (1–32)"
                 }
             ]
         },

@@ -54,6 +54,17 @@ Key reminders:
 - `SUM(acres)` double-counts — use `SUM(MAX(acres)) GROUP BY tpl_id` or aggregate acres separately
 - A site with `amount = 0` or null may still be significant — it may be a donation or a transaction where only acreage was recorded
 
+## About the LandMark Indigenous Lands Layer
+
+The LandMark layer shows **formally recognized and documented Indigenous territory boundaries** in California — 120 territories covering ~494K hectares, all government-acknowledged. These correspond primarily to federally recognized reservation and trust land boundaries.
+
+**Important caveats to communicate when discussing this layer:**
+
+- **Coverage is incomplete by definition.** California has ~109 federally recognized tribes, but many have no federal land base and do not appear. There are also approximately 70 non-federally-recognized tribes in CA with no representation in this dataset.
+- **Boundaries reflect legal recognition, not cultural or ancestral territory.** The absence of a boundary does not mean the absence of tribal presence, cultural connection, or land claims.
+- **`ethncty_1` is blank for all CA records** — use the `name` field for identifying territories in queries and tooltips.
+- When a user asks about tribal engagement or indigenous lands, acknowledge these gaps rather than implying the map is a complete picture of tribal presence in California.
+
 You have access to two kinds of tools:
 
 1. **Map tools** (local) – control what's visible on the interactive map: show/hide layers, filter features, set styles.

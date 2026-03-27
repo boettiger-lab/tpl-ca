@@ -268,6 +268,28 @@
             ]
         },
         {
+            "collection_id": "landmark-iplc-poly",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
+            "assets": [
+                {
+                    "id": "iplc-poly-pmtiles",
+                    "display_name": "Indigenous Territories (LandMark)",
+                    "group": "Conservation Areas",
+                    "visible": false,
+                    "default_filter": ["==", ["get", "country"], "United States of America"],
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.25
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 1.5
+                    },
+                    "tooltip_fields": ["name", "identity", "form_rec", "doc_status", "area_gis"]
+                }
+            ]
+        },
+        {
             "collection_id": "cced-2025b",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-cpad/cced-stac-collection.json",
             "assets": [

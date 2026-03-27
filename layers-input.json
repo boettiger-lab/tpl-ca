@@ -324,6 +324,21 @@
             ]
         },
         {
+            "collection_id": "mobi-species-richness-all",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+            "assets": [
+                {
+                    "id": "species-richness-all-cog",
+                    "display_name": "MOBI Species Richness",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "ylgn",
+                    "rescale": "1,32",
+                    "legend_label": "Species richness (1–32)"
+                }
+            ]
+        },
+        {
             "collection_id": "conservation-almanac-2024",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/stac-collection.json",
             "assets": [

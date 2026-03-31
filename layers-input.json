@@ -2,6 +2,10 @@
     "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
     "titiler_url": "https://titiler.nrp-nautilus.io",
     "mcp_url": "https://duckdb-mcp.nrp-nautilus.io/mcp",
+    "links": {
+        "github": "https://github.com/boettiger-lab/tpl-ca",
+        "carbon": true
+    },
     "view": {
         "center": [-119.5, 37.5],
         "zoom": 6
@@ -110,6 +114,7 @@
         },
         {
             "collection_id": "landvote",
+            "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/landvote/stac-collection.json",
             "assets": [
                 {
@@ -191,6 +196,7 @@
         },
         {
             "collection_id": "census-2024-cd",
+            "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json",
             "assets": [
                 {
@@ -213,6 +219,7 @@
         },
         {
             "collection_id": "census-2025-sldl",
+            "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json",
             "assets": [
                 {
@@ -235,6 +242,7 @@
         },
         {
             "collection_id": "census-2025-sldu",
+            "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json",
             "assets": [
                 {
@@ -340,6 +348,7 @@
         },
         {
             "collection_id": "conservation-almanac-2024",
+            "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/stac-collection.json",
             "assets": [
                 {

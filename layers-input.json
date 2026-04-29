@@ -145,6 +145,159 @@
             ]
         },
         {
+            "collection_id": "american-rivers-dam-removal",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/dam-removal/stac-collection.json",
+            "assets": [
+                {
+                    "id": "dam-removal-pmtiles",
+                    "display_name": "Dam Removals",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "circle",
+                    "default_style": {
+                        "circle-color": "#0277BD",
+                        "circle-radius": 4,
+                        "circle-stroke-color": "#01579B",
+                        "circle-stroke-width": 1
+                    },
+                    "tooltip_fields": ["Dam_Name", "River", "State", "Year_Removed", "Dam_Height_ft", "Reason_for_removal"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-nri-2016",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2016/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nri-2016-pmtiles",
+                    "display_name": "Nationwide Rivers Inventory (2016)",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#0288D1",
+                        "line-width": 1.2
+                    },
+                    "tooltip_fields": ["River", "Reach", "Classifica", "ORV", "GIS_Miles", "State1"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-nri-2024",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2024/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nri-2024-pmtiles",
+                    "display_name": "Nationwide Rivers Inventory (2024)",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#01579B",
+                        "line-width": 1.2
+                    },
+                    "tooltip_fields": ["River", "Reach", "Classifica", "ORV", "GIS_Miles", "State1"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-campaigns",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/campaigns/stac-collection.json",
+            "assets": [
+                {
+                    "id": "campaigns-pmtiles",
+                    "display_name": "Active Protection Campaigns",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#EF6C00",
+                        "line-width": 2
+                    },
+                    "tooltip_fields": ["River_Name", "Description", "Miles", "Prot_Status", "ORVs", "Admin_Agency"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-wild-scenic-eligible",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/wild-scenic-eligible/stac-collection.json",
+            "assets": [
+                {
+                    "id": "wild-scenic-eligible-pmtiles",
+                    "display_name": "Eligible & Suitable W&S Rivers",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#F9A825",
+                        "line-width": 1.4
+                    },
+                    "tooltip_fields": ["RIVER_NAME", "ELIGIBLE", "SUITABLE", "MILES", "STATE1", "ADMINISTRA"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-wild-scenic-designated",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/wild-scenic-designated/stac-collection.json",
+            "assets": [
+                {
+                    "id": "wild-scenic-designated-pmtiles",
+                    "display_name": "Designated Wild & Scenic Rivers",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#2E7D32",
+                        "line-width": 1.6
+                    },
+                    "tooltip_fields": ["WSR_RIVER_", "AGENCY", "CLASSIFICA", "SEGMENT_MI", "STATE"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-ira-watersheds",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/ira-watersheds/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ira-watersheds-pmtiles",
+                    "display_name": "IRA Drinking Water Watersheds",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "default_filter": ["==", ["get", "STATE"], "CA"],
+                    "default_style": {
+                        "fill-color": "#4FC3F7",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#01579B",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": ["HUC12", "STATE", "IDX", "SUM_POP", "SR"]
+                }
+            ]
+        },
+        {
+            "collection_id": "american-rivers-roo-cjest",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/roo-cjest/stac-collection.json",
+            "assets": [
+                {
+                    "id": "roo-cjest-pmtiles",
+                    "display_name": "Rivers of Opportunity (CJEST)",
+                    "group": "American Rivers",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#8E24AA",
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#4A148C",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["GEOID10", "SF", "SN_C", "TPF", "THRHLD"]
+                }
+            ]
+        },
+        {
             "collection_id": "svi-2022",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
             "assets": [
@@ -343,6 +496,27 @@
                         "fill-opacity": 0.5
                     },
                     "tooltip_fields": ["UNIT_NAME", "AGNCY_NAME", "ACCESS_TYP", "ACRES"]
+                }
+            ]
+        },
+        {
+            "collection_id": "wcb-approved-projects",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/wcb-approved-projects/stac-collection.json",
+            "assets": [
+                {
+                    "id": "wcb-approved-projects-pmtiles",
+                    "display_name": "WCB Approved Projects",
+                    "group": "Conservation Areas",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#00695C",
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#004D40",
+                        "line-width": 0.6
+                    },
+                    "tooltip_fields": ["ProjName", "PrimGrante", "County", "Acres", "WCBFunding", "Type", "Program", "dtmBoardAp"]
                 }
             ]
         },

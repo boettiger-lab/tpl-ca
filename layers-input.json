@@ -267,15 +267,21 @@
                     "display_name": "Rivers of Opportunity (CJEST)",
                     "group": "American Rivers",
                     "visible": false,
+                    "default_filter": ["==", ["get", "SF"], "California"],
                     "default_style": {
-                        "fill-color": "#8E24AA",
-                        "fill-opacity": 0.4
+                        "fill-color": ["interpolate", ["linear"], ["to-number", ["get", "TC"]],
+                            0,  "#F3E5F5",
+                            3,  "#CE93D8",
+                            7,  "#8E24AA",
+                            14, "#4A148C"
+                        ],
+                        "fill-opacity": 0.55
                     },
                     "outline_style": {
-                        "line-color": "#4A148C",
+                        "line-color": "#9E9E9E",
                         "line-width": 0.3
                     },
-                    "tooltip_fields": ["GEOID10", "SF", "SN_C", "TPF", "THRHLD"]
+                    "tooltip_fields": ["GEOID10", "SF", "CF", "TC", "SN_T", "THRHLD"]
                 }
             ]
         },

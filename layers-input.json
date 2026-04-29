@@ -165,30 +165,12 @@
             ]
         },
         {
-            "collection_id": "american-rivers-nri-2016",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2016/stac-collection.json",
-            "assets": [
-                {
-                    "id": "nri-2016-pmtiles",
-                    "display_name": "Nationwide Rivers Inventory (2016)",
-                    "group": "American Rivers",
-                    "visible": false,
-                    "layer_type": "line",
-                    "default_style": {
-                        "line-color": "#0288D1",
-                        "line-width": 1.2
-                    },
-                    "tooltip_fields": ["River", "Reach", "Classifica", "ORV", "GIS_Miles", "State1"]
-                }
-            ]
-        },
-        {
             "collection_id": "american-rivers-nri-2024",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2024/stac-collection.json",
             "assets": [
                 {
                     "id": "nri-2024-pmtiles",
-                    "display_name": "Nationwide Rivers Inventory (2024)",
+                    "display_name": "Nationwide Rivers Inventory",
                     "group": "American Rivers",
                     "visible": false,
                     "layer_type": "line",

@@ -4,6 +4,7 @@
     "mcp_url": "https://duckdb-mcp.nrp-nautilus.io/mcp",
     "links": {
         "github": "https://github.com/boettiger-lab/tpl-ca",
+        "docs": "/docs.html",
         "carbon": true
     },
     "view": {

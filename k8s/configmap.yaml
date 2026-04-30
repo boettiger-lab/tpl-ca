@@ -14,8 +14,14 @@ data:
   config.template.json: |
     {
         "mcp_server_url": "${MCP_SERVER_URL}",
-        "llm_model": "minimax-m2",
+        "llm_model": "qwen3",
         "llm_models": [
+            {
+                "value": "nemotron",
+                "label": "DSE Nemotron",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
             {
                 "value": "glm-4.7",
                 "label": "NRP GLM-4.7",
@@ -25,6 +31,12 @@ data:
             {
                 "value": "qwen3",
                 "label": "NRP Qwen3",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "qwen3-small",
+                "label": "NRP Qwen3 Small",
                 "endpoint": "/api/llm",
                 "api_key": "unused"
             },

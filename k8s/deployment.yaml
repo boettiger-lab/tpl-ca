@@ -19,6 +19,14 @@ spec:
       labels:
         app: tpl-ca
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: feature.node.kubernetes.io/pci-10de.present
+                    operator: NotIn
+                    values: ["true"]
       initContainers:
       - name: git-clone
         image: alpine/git:2.52.0
@@ -28,6 +36,7 @@ spec:
         - |
           git clone --depth 1 https://github.com/boettiger-lab/tpl-ca.git /tmp/repo
           cp /tmp/repo/index.html /usr/share/nginx/html/
+          cp /tmp/repo/docs.html /usr/share/nginx/html/
           cp /tmp/repo/layers-input.json /usr/share/nginx/html/
           cp /tmp/repo/system-prompt.md /usr/share/nginx/html/
         volumeMounts:

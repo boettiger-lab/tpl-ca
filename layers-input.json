@@ -570,14 +570,43 @@
                     "group": "Geology",
                     "visible": false,
                     "default_style": {
-                        "fill-color": ["match",["get","MapUnit"],"BCB","#99C2B5","BCT","#34B2C9","CMBS","#6FB9CC","CMFG","#93D6E6","CMFL","#93D6E6","CMFM","#93D6E6","CMFS","#93D6E6","CMFU","#93D6E6","CMFV","#93D6E6","CMLM","#6FB9CC","CMLV","#6FB9CC","CMMB","#93D6E6","CMMS","#93D6E6","CPJP","#B279B2","CPPB","#34B2C9","CPTG","#B279B2","CPTL","#B279B2","CPTO","#B279B2","CPTS","#B279B2","CPTV","#B279B2","CWCG","#93D6E6","CWCH","#93D6E6","CWGR","#6FB9CC","CWSS","#93D6E6","CWSV","#93D6E6","EPS","#F04030","ERP","#99C2B5","FRM","#B279B2","FRS","#56C0D8","FRU","#CB8C37","FZM","#7FC64E","FZMg","#7FC64E","FZMl","#7FC64E","FZMs","#93D6E6","FZMu","#93D6E6","FZMv","#93D6E6","FZS","#7FC64E","Gbg","#93D6E6","Gbl","#7FC64E","Gbm","#56C0D8","Gbr","#7FC64E","Gbv","#7FC64E","Gbvc","#7FC64E","Gby","#6FB9CC","Gc","#7FC64E","Gca","#7FC64E","Gcc","#34B2C9","Gco","#7FC64E","Gcr","#93D6E6","Gdm","#7FC64E","Gdp","#34B2C9","Gegg","#6FB9CC","Gegm","#6FB9CC","Gep","#B279B2","Gfg","#7FC64E","Gg","#93D6E6","Ggb","#7FC64E","Ggu","#7FC64E","Ggv","#93D6E6","Ghb","#93D6E6","Ghor","#93D6E6","Gid","#7FC64E","Gidg","#93D6E6","Gido","#93D6E6","Giv","#93D6E6","Givg","#93D6E6","Gja","#B3E1B6","Gjam","#B3E1B6","Gjm","#B3E1B6","Gks","#7FC64E","Glkt","#7FC64E","Glu","#93D6E6","Gm","#67C5CA","Gmg","#B3E1B6","Gmm","#7FC64E","Gmo","#6FB9CC","Gmw","#B3E1B6","Gnm","#7FC64E","Gop","#7FC64E","Gpa","#B3E1B6","Gpal","#93D6E6","Gpc","#6FB9CC","Gph","#93D6E6","Gpp","#93D6E6","Gps","#7FC64E","Grp","#7FC64E","Gsb","#B0BCB7","Gsc","#34B2C9","Gscm","#93D6E6","Gscp","#6FB9CC","Gse","#6FB9CC","Gsf","#93D6E6","Gsj","#93D6E6","Gsjd","#34B2C9","Gsjg","#93D6E6","Gsl","#7FC64E","Gsm","#7FC64E","Gso","#7FC64E","Gsp","#6FB9CC","Gspm","#93D6E6","Gsr","#93D6E6","Gte","#7FC64E","Gtt","#7FC64E","Gtu","#7FC64E","Gu","#7FC64E","Gwa","#B3E1B6","Gwc","#6FB9CC","Gwh","#B3E1B6","Gyo","#7FC64E","Gyr","#93D6E6","Gyrd","#93D6E6","HSS","#B279B2","HSV","#7FC64E","I1","#7FA056","I2","#CB8C37","I3","#B279B2","I4","#56C0D8","KE","#7FC64E","KR","#7FC64E","KSM","#7FC64E","KSV","#7FC64E","MRCC","#B279B2","MRCG","#B279B2","MRCS","#B279B2","MRDGG","#56C0D8","MRDGS","#56C0D8","MRDPH","#56C0D8","MRGP","#7FC64E","MRKA","#34B2C9","MRKI","#009270","MRSM","#34B2C9","NSRO","#F04030","NSSA","#009270","NSSB","#99C2B5","NSSF","#CB8C37","NSSM","#CB8C37","NSST","#56C0D8","NSTS","#6FB9CC","NSTT","#7FC64E","OW","#F04030","PAS","#99C2B5","PS","#FDB47A","SCGG","#6FB9CC","SCGV","#93D6E6","SHKOG","#7FC64E","SHKOV","#7FC64E","SL","#34B2C9","TL","#34B2C9","TSS","#67C5CA","WLS","#B279B2","WLV","#7FC64E","YAAB","#34B2C9","YAAM","#34B2C9","YACB","#F04030","YACC","#6FB9CC","YACG","#6FB9CC","YACGb","#6FB9CC","YACGv","#6FB9CC","YACL","#6FB9CC","YACM","#F04030","YACU","#6FB9CC","YACV","#6FB9CC","YALC","#34B2C9","YALD","#34B2C9","YALG","#34B2C9","YALO","#F04030","YALU","#34B2C9","YALV","#34B2C9","YOCF","#6FB9CC","YOMO","#93D6E6","YOOC","#6FB9CC","YOSD","#6FB9CC","YOSG","#6FB9CC","YOSU","#6FB9CC","YOSV","#6FB9CC","YSFB","#34B2C9","YSFC","#34B2C9","YSFS","#34B2C9","YSFV","#34B2C9","YSJC","#34B2C9","YSJD","#34B2C9","YSJG","#34B2C9","YSJL","#34B2C9","YSJO","#34B2C9","YSJS","#34B2C9","YSJV","#34B2C9","YSSC","#34B2C9","YSSCd","#34B2C9","YSSCg","#34B2C9","YSSCl","#34B2C9","YSSCm","#34B2C9","YSSCu","#34B2C9","YSSCv","#34B2C9","YSSG","#34B2C9","YSSM","#34B2C9","YSSS","#34B2C9","YSSU","#34B2C9","aca","#FFE800","aft","#FEF99E","al-i","#FFF2AE","al-o","#FFF2AE","al-vo","#FFF2AE","al-y","#FEF99E","auv","#FFF2AE","ba","#F9F97F","ba-y","#FEF99E","ben","#FFCC00","bob","#FFCC00","bop","#FFCC00","bpv","#FFF2AE","bt","#FFF2AE","chi","#B3E1B6","cos","#FFE800","cov","#FFE800","covy","#FFF2AE","cpf","#FFE800","cpv","#FFCC00","cuv","#FFCC00","dos","#FFCC00","dpb","#FFE800","eol","#FEF99E","gl","#F9F97F","gol","#FDB47A","gtv","#FFF2AE","imf","#FFCC00","io","#FCC68F","ivs","#FFCC00","kin","#FFCC00","krf","#FFF2AE","lc-i","#FFF2AE","lc-y","#FEF99E","ljb","#FFCC00","ls","#FEF99E","lve","#FFF2AE","lvg","#FFF2AE","lvmi","#FFF2AE","lvmo","#FFF2AE","lvmy","#FFF2AE","mco","#FFF2AE","mcy","#FFF2AE","mhd","#FFE800","mic","#FEF99E","mmv","#FFF2AE","ms","#FFCC00","na","#999999","nev","#FFCC00","oso","#FFE800","otb","#FFF2AE","pvg","#FED99A","sep","#FED99A","sg","#FFCC00","shc","#F9F97F","skv","#FFE800","tec","#FFCC00","tej","#FCC68F","tkt","#FFCC00","tmb","#FFCC00","tml","#FFCC00","ttv","#FFF2AE","tus","#FFE800","tuv","#FFCC00","unmapped","#999999","v-i","#FFF2AE","v-vo","#FFF2AE","v-y","#FEF99E","water","#999999","wit","#F2B47C","wlk","#FFCC00","#999999"],
+                        "fill-color": ["match", ["get", "GeoMaterial"],
+                            "Alluvial sediment, mostly coarse-grained", "#FFF2AE",
+                            "Alluvial sediment, mostly fine-grained", "#FEF99E",
+                            "Dune sand", "#FFE082",
+                            "Glacial till", "#E3E3E3",
+                            "Lacustrine sediment, mostly fine-grained", "#B5C7D9",
+                            "Marine sediment, mostly fine-grained", "#80AECF",
+                            "Debris flows, landslides, and other localized mass-movement sediment", "#D2B48C",
+                            "Water or ice", "#4A90D9",
+                            "\"Made\" or human-engineered land", "#555555",
+                            "Unmapped area", "#CCCCCC",
+                            "Clastic sedimentary rock", "#F2C880",
+                            "Sedimentary and extrusive igneous material", "#BFA988",
+                            "Sandstone and mudstone", "#E8C170",
+                            "Coarse-grained intrusive igneous rock", "#F08080",
+                            "Coarse-grained, mafic-composition intrusive igneous rock", "#8B3A3A",
+                            "Igneous rock", "#E68A8A",
+                            "Extrusive igneous material", "#B774C8",
+                            "Mafic-composition lava flows", "#6B2D6B",
+                            "Intermediate-composition lava flows", "#A85FBE",
+                            "Felsic-composition pyroclastic flows", "#DCB1E1",
+                            "Metamorphic rock", "#7FC64E",
+                            "Metaigneous rock", "#5FA76C",
+                            "Metasedimentary rock", "#97D080",
+                            "Meta-carbonate rock", "#BCD9A6",
+                            "Meta-mafic rock", "#4F8654",
+                            "Meta-ultramafic rock", "#1F4E2E",
+                            "Medium and high-grade regional metamorphic rock, of unspecified origin", "#6BAB8E",
+                            "#999999"
+                        ],
                         "fill-opacity": 0.7
                     },
                     "outline_style": {
                         "line-color": "#444444",
                         "line-width": 0.2
                     },
-                    "tooltip_fields": ["MapUnit", "Notes", "IdentityConfidence"]
+                    "tooltip_fields": ["FullName", "MapUnit", "Age", "GeoMaterial", "IdentityConfidence"]
                 }
             ]
         },

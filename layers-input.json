@@ -66,6 +66,57 @@
             ]
         },
         {
+            "collection_id": "usfws-critical-habitat-final",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
+            "assets": [
+                {
+                    "id": "final-pmtiles",
+                    "display_name": "USFWS Critical Habitat (Final)",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "listing_st"],
+                            "Endangered",  "#B71C1C",
+                            "Threatened",  "#EF6C00",
+                            "Extinction",  "#424242",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#7F0000",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": ["comname", "sciname", "listing_st", "unitname", "status", "pubdate"]
+                }
+            ]
+        },
+        {
+            "collection_id": "usfws-critical-habitat-proposed",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/proposed/stac-collection.json",
+            "assets": [
+                {
+                    "id": "proposed-pmtiles",
+                    "display_name": "USFWS Critical Habitat (Proposed)",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "listing_st"],
+                            "Proposed Endangered", "#AD1457",
+                            "Proposed Threatened", "#F9A825",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": ["comname", "sciname", "listing_st", "unitname", "status", "pubdate"]
+                }
+            ]
+        },
+        {
             "collection_id": "calfire-2024-firep",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2024/firep/stac-collection.json",
             "assets": [

@@ -510,6 +510,27 @@
             ]
         },
         {
+            "collection_id": "sierra-nevada-atlas-map-unit-polys",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cgs/sierra-nevada-atlas/map-unit-polys/stac-collection.json",
+            "assets": [
+                {
+                    "id": "map-unit-polys-pmtiles",
+                    "display_name": "Sierra Nevada Geologic Units",
+                    "group": "Geology",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#C9A576",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#6D4C2E",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["MapUnit", "Label", "Notes", "IdentityConfidence"]
+                }
+            ]
+        },
+        {
             "collection_id": "conservation-almanac-2024-sites",
             "preload": true,
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-sites/stac-collection.json",

@@ -526,7 +526,7 @@
                         "line-color": "#444444",
                         "line-width": 0.2
                     },
-                    "tooltip_fields": ["MapUnit", "Label", "Notes", "IdentityConfidence"]
+                    "tooltip_fields": ["MapUnit", "Notes", "IdentityConfidence"]
                 }
             ]
         },

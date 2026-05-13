@@ -26,7 +26,40 @@
     "collections": [
         {
             "collection_id": "wetlands-nwi",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json"
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nwi-pmtiles",
+                    "display_name": "NWI Wetlands",
+                    "group": "Wetlands",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match", ["get", "WETLAND_TYPE"],
+                            "Freshwater Emergent Wetland",        "#7CCD7C",
+                            "Freshwater Forested/Shrub Wetland",  "#008000",
+                            "Freshwater Pond",                    "#2980B9",
+                            "Lake",                               "#1F77B4",
+                            "Lakes",                              "#1F77B4",
+                            "Riverine",                           "#0099CC",
+                            "Estuarine and Marine Wetland",       "#FF7F00",
+                            "Estuarine and Marine Deepwater",     "#0F0F73",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.6
+                    },
+                    "outline_style": {
+                        "line-color": "#333333",
+                        "line-width": 0.3,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": [
+                        "WETLAND_TYPE",
+                        "ATTRIBUTE",
+                        "state_code"
+                    ]
+                }
+            ]
         },
         {
             "collection_id": "irrecoverable-carbon",

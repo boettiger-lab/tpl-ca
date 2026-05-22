@@ -211,6 +211,26 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 </section>
 
 <section>
+    <h2>Working with the Data Assistant</h2>
+    <p>The Data Assistant doesn't just answer questions — it can drive the map for you. Most of the things people reach for a settings menu to do can be asked in plain language:</p>
+    <ul>
+        <li><strong>Adjust layer styling and transparency:</strong> <em>"Make Wildfire Perimeters 50% transparent"</em>, <em>"Color CalEnviroScreen by pollution percentile"</em>, <em>"Shade WCB projects by funding amount."</em></li>
+        <li><strong>Show, hide, or filter layers:</strong> <em>"Turn on Indigenous Territories and turn off Conservation Easements"</em>, <em>"Show only fires after 2015"</em>, <em>"Hide everything except Conservation Almanac sites in Senate District 2."</em></li>
+        <li><strong>Zoom and pan:</strong> <em>"Zoom to Assembly District 14"</em>, <em>"Center the map on the Sierra Nevada."</em></li>
+        <li><strong>Export query results:</strong> <em>"Give me a CSV of WCB-funded projects in CD-16"</em> — the assistant returns a downloadable table.</li>
+        <li><strong>Combine layers in an analysis:</strong> <em>"Which census tracts have both high pollution burden and low species richness?"</em> — the assistant writes the spatial SQL and shows the result.</li>
+    </ul>
+    <p>And a few interface tips that aren't visually obvious:</p>
+    <ul>
+        <li>The Data Assistant panel is <strong>resizable</strong> — drag its left edge to give chat more or less width.</li>
+        <li>Use the header button to <strong>minimize</strong> the panel; a floating "show" button restores it.</li>
+        <li>On phones and tablets, the panel auto-collapses to overlay mode so the full map stays visible.</li>
+        <li>PMTiles layers don't use a fixed legend. <strong>Hover</strong> over any feature for a tooltip with that feature's live attributes — values, names, categories — direct from the source data.</li>
+        <li>Every tool call the assistant runs is logged in the per-turn timeline so you can see exactly what it queried, with what arguments, and what came back.</li>
+    </ul>
+</section>
+
+<section>
     <h2>Data layers &amp; sources</h2>
     <p>Every layer in the app draws from a public, primary source. Click "STAC" beside any entry to see the full machine-readable metadata — schemas, column descriptions, license, lineage, and download URLs.</p>
 

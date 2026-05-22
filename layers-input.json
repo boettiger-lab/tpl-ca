@@ -687,6 +687,206 @@
                     "tooltip_fields": ["site", "owner", "owner_type", "manager", "access_type", "purchase_type", "acres", "year", "county"]
                 }
             ]
+        },
+        {
+            "collection_id": "conservation-almanac-2024-funding",
+            "preload": true,
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-funding/stac-collection.json"
+        },
+        {
+            "collection_id": "usgs-fires-2021-combined",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/usgs-fires-2021/combined/stac-collection.json",
+            "assets": [
+                {
+                    "id": "combined-pmtiles",
+                    "display_name": "USGS Wildland Fires (1878–2020)",
+                    "group": "Fire",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["interpolate", ["linear"], ["to-number", ["get", "Fire_Year"]],
+                            1900, "#FFF3E0",
+                            1980, "#FFB74D",
+                            2010, "#E64A19",
+                            2020, "#B71C1C"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#8D2A12",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["Listed_Fire_Names", "Fire_Year", "GIS_Acres", "Assigned_Fire_Type", "Listed_Fire_Cause_Class"]
+                }
+            ]
+        },
+        {
+            "collection_id": "ghs-pop-2020",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-high-seas/ghs-pop-2020/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ghs-pop-2020-cog",
+                    "display_name": "Population Density (GHS-POP 2020)",
+                    "group": "Demographics",
+                    "visible": false,
+                    "colormap": "magma",
+                    "rescale": "0,200",
+                    "legend_label": "Persons per ~90m cell (0–200)"
+                }
+            ]
+        },
+        {
+            "collection_id": "iucn-richness-2025",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-iucn/stac-collection.json",
+            "assets": [
+                {
+                    "id": "combined-sr-cog",
+                    "display_name": "IUCN Species Richness (all taxa)",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "ylgn",
+                    "rescale": "0,500",
+                    "legend_label": "Species count (0–500)"
+                },
+                {
+                    "id": "mammals-sr-cog",
+                    "display_name": "IUCN Species Richness — Mammals",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "ylgn",
+                    "rescale": "0,150",
+                    "legend_label": "Mammal species (0–150)"
+                },
+                {
+                    "id": "birds-sr-cog",
+                    "display_name": "IUCN Species Richness — Birds",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "ylgn",
+                    "rescale": "0,400",
+                    "legend_label": "Bird species (0–400)"
+                }
+            ]
+        },
+        {
+            "collection_id": "ncp-biodiversity",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-ncp/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ncp-only-cog",
+                    "display_name": "NCP Biodiversity Importance",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "viridis",
+                    "rescale": "0,1",
+                    "legend_label": "NCP index (0–1)"
+                },
+                {
+                    "id": "ncp-biod-nathab-cog",
+                    "display_name": "NCP Biodiversity × Natural Habitat",
+                    "group": "Biodiversity",
+                    "visible": false,
+                    "colormap": "viridis",
+                    "rescale": "0,1",
+                    "legend_label": "NCP × habitat (0–1)"
+                }
+            ]
+        },
+        {
+            "collection_id": "cgls-lc100-2019",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json",
+            "assets": [
+                {
+                    "id": "cgls-lc100-2019-cog",
+                    "display_name": "Land Cover (Copernicus CGLS 2019)",
+                    "group": "Land Cover",
+                    "visible": false,
+                    "legend_type": "categorical",
+                    "legend_label": "CGLS land-cover class"
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
+            "assets": [
+                {
+                    "id": "fee-pmtiles",
+                    "display_name": "PAD-US Fee (national)",
+                    "group": "Conservation Areas",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "GAP_Sts"],
+                            "1", "#1B5E20",
+                            "2", "#43A047",
+                            "3", "#A5D6A7",
+                            "4", "#E0E0E0",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#1B5E20",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["Unit_Nm", "Mang_Name", "Mang_Type", "Own_Type", "GAP_Sts", "Pub_Access", "GIS_Acres", "State_Nm"]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-combined",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/combined/stac-collection.json",
+            "assets": [
+                {
+                    "id": "combined-pmtiles",
+                    "display_name": "PAD-US Combined (all protection types)",
+                    "group": "Conservation Areas",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "Category"],
+                            "Fee",          "#2E7D32",
+                            "Easement",     "#6A1B9A",
+                            "Marine",       "#0277BD",
+                            "Proclamation", "#FF8F00",
+                            "Designation",  "#558B2F",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#424242",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["Unit_Nm", "Category", "Des_Tp", "Mang_Name", "Own_Type", "GAP_Sts", "Pub_Access", "GIS_Acres", "State_Nm"]
+                }
+            ]
+        },
+        {
+            "collection_id": "mappinginequality",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mappinginequality/stac-collection.json",
+            "assets": [
+                {
+                    "id": "mappinginequality-pmtiles",
+                    "display_name": "HOLC Redlining (Mapping Inequality)",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_filter": ["==", ["get", "state"], "CA"],
+                    "default_style": {
+                        "fill-color": ["match", ["get", "grade"],
+                            "A", "#1B5E20",
+                            "B", "#1565C0",
+                            "C", "#F9A825",
+                            "D", "#C62828",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#424242",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["city", "state", "grade", "category", "label", "residential", "commercial", "industrial"]
+                }
+            ]
         }
     ]
 }

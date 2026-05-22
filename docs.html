@@ -261,6 +261,11 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="source">LandMark — global platform for indigenous and community lands, coordinated by the World Resources Institute and partners. Coverage reflects formal legal recognition only.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json" target="_blank" rel="noopener">STAC</a><a href="https://www.landmarkmap.org" target="_blank" rel="noopener">Source</a></div>
         </div>
+        <div class="layer">
+            <div class="name">PAD-US 4.1 (Fee &amp; Combined)</div>
+            <div class="source">US Geological Survey Gap Analysis Project — Protected Areas Database of the United States. Fee layer covers fee-owned protected areas; Combined layer adds easements, marine areas, and proclamation boundaries.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json" target="_blank" rel="noopener">STAC: Fee</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/combined/stac-collection.json" target="_blank" rel="noopener">STAC: Combined</a><a href="https://www.usgs.gov/programs/gap-analysis-project/science/protected-areas" target="_blank" rel="noopener">Source</a></div>
+        </div>
     </div>
 
     <div class="layer-group">
@@ -318,6 +323,34 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="source">NatureServe Map of Biodiversity Importance — modeled species richness across all imperiled taxa in the United States.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.natureserve.org/conservation-tools/data-maps-tools/map-biodiversity-importance" target="_blank" rel="noopener">Source</a></div>
         </div>
+        <div class="layer">
+            <div class="name">IUCN Species Richness (2025)</div>
+            <div class="source">International Union for Conservation of Nature — Red List range maps rasterised to species-count grids for all terrestrial vertebrate taxa, with per-taxon breakdowns for mammals and birds.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-iucn/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">NCP Biodiversity Importance</div>
+            <div class="source">Nature's Contributions to People — composite biodiversity-importance indicators; the "× Natural Habitat" variant masks the index to natural-habitat cover.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ncp/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Demographics</h3>
+        <div class="layer">
+            <div class="name">Population Density (GHS-POP 2020)</div>
+            <div class="source">Global Human Settlement Layer (European Commission JRC) — 2020 population count at ~90m resolution, R2023A release.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-high-seas/ghs-pop-2020/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://human-settlement.emergency.copernicus.eu/ghs_pop.php" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Land Cover</h3>
+        <div class="layer">
+            <div class="name">Copernicus Global Land Cover (CGLS-LC100 2019)</div>
+            <div class="source">Copernicus Global Land Service v3.0.1 — 100m global land-cover classification (23 classes, FAO LCCS scheme).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://land.copernicus.eu/global/products/lc" target="_blank" rel="noopener">Source</a></div>
+        </div>
     </div>
 
     <div class="layer-group">
@@ -336,6 +369,11 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="source">CAL FIRE Fire and Resource Assessment Program (FRAP) — official California fire history (perimeters and treated-fuels), 2024 release.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2024/firep/stac-collection.json" target="_blank" rel="noopener">STAC: Perimeters</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2024/rxburn/stac-collection.json" target="_blank" rel="noopener">STAC: RxBurns</a><a href="https://frap.fire.ca.gov" target="_blank" rel="noopener">Source</a></div>
         </div>
+        <div class="layer">
+            <div class="name">USGS Wildland Fires (1878–2020)</div>
+            <div class="source">USGS Wildland Fire Combined Dataset 2021 — a national, deduplicated synthesis of wildfire perimeters from federal, state, and tribal sources extending back to the late 1800s.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/usgs-fires-2021/combined/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81" target="_blank" rel="noopener">Source</a></div>
+        </div>
     </div>
 
     <div class="layer-group">
@@ -349,6 +387,11 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="name">CalEnviroScreen 5.0</div>
             <div class="source">California Environmental Protection Agency, Office of Environmental Health Hazard Assessment — pollution and population-vulnerability screening for California census tracts.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-calenviroscreen/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://oehha.ca.gov/calenviroscreen" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">HOLC Redlining (Mapping Inequality)</div>
+            <div class="source">Mapping Inequality (Robert K. Nelson et al., University of Richmond Digital Scholarship Lab) — Home Owners' Loan Corporation neighborhood security grades A–D from the late 1930s, the historical basis of redlining.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-mappinginequality/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 

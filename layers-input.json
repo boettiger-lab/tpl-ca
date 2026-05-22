@@ -887,6 +887,53 @@
                     "tooltip_fields": ["city", "state", "grade", "category", "label", "residential", "commercial", "industrial"]
                 }
             ]
+        },
+        {
+            "collection_id": "ca-dac-eda-2023",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-ca-dac/stac-collection.json",
+            "assets": [
+                {
+                    "id": "dac-tract-pmtiles",
+                    "display_name": "CA Disadvantaged Communities (DAC, tract)",
+                    "group": "Social Vulnerability",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "DAC23"],
+                            "Y", "#C62828",
+                            "N", "#BDBDBD",
+                            "#EEEEEE"
+                        ],
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#555555",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": ["GEOID20", "DAC23", "MHI23", "Pop23", "HH23", "Source"]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-tract",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json",
+            "assets": [
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "California Census Tracts",
+                    "group": "Political Boundaries",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#37474F",
+                        "fill-opacity": 0.05
+                    },
+                    "outline_style": {
+                        "line-color": "#37474F",
+                        "line-width": 1.0
+                    },
+                    "default_filter": ["==", ["get", "STATEFP"], "06"],
+                    "tooltip_fields": ["NAMELSAD", "GEOID", "TRACTCE", "COUNTYFP"]
+                }
+            ]
         }
     ]
 }

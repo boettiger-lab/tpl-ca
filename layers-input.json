@@ -6,7 +6,8 @@
     "sidebar": {
         "enabled": true,
         "default_width": 460,
-        "title": "TPL CA Data Assistant"
+        "title": "TPL CA Data Assistant",
+        "chat_title": "Chat"
     },
     "links": {
         "github": "https://github.com/boettiger-lab/tpl-ca",

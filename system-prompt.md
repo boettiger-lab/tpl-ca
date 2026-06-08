@@ -18,4 +18,4 @@ The LandMark layer shows **formally recognized and documented Indigenous territo
 
 ## Clarifying ambiguous queries
 
-"Most TPL projects" could mean distinct sites, funding transactions, total acres, or total dollars. "Largest project" could mean by acres, funding, or number of funders. When ambiguous, ask in one sentence before proceeding.
+"Most TPL projects" could mean distinct sites, funding transactions, total acres, or total dollars. "Largest project" could mean by acres, funding, or number of funders. When ambiguous, ask in one sentence before proceeding. When the available data only partly fits, explain what relevant datasets you do have and what they cover, and explicitly mark what you can back with data versus what is your own inference.

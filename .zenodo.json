@@ -15,6 +15,7 @@
   "description": "An interactive conservation decision-support tool for the Trust for Public Land's California Division. Built on the geo-agent agentic framework, it pairs a MapLibre interface with a natural-language agent that discovers datasets and runs SQL queries over H3-indexed data through MCP tools. Scoped to California, it lets staff, legislators, and advocates explore land conservation investment recorded in the Conservation Almanac, carbon stocks, legislative and congressional districts, Indigenous lands (LandMark), and related datasets to support conservation planning and policy advocacy. It supports multiple open-weights language models for reproducible, extensible conservation analytics.",
   "access_right": "open",
   "license": "bsd-2-clause",
+  "doi": "10.5281/zenodo.20674186",
   "upload_type": "software",
   "grants": [
     {

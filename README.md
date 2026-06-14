@@ -1,4 +1,4 @@
-# geo-agent: Trust for Public Land (CA)
+# Trust for Public Land California Explorer
 
 [![DOI](https://zenodo.org/badge/1183721470.svg)](https://doi.org/10.5281/zenodo.20674186)
 

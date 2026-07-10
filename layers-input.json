@@ -997,6 +997,178 @@
                     "tooltip_fields": ["PWS_Name", "PWSID", "Primacy_Agency", "Pop_Cat_5", "Population_Served_Count", "Service_Area_Type", "Model_Method"]
                 }
             ]
+        },
+        {
+            "collection_id": "swap-2025-provinces",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json",
+            "assets": [
+                {
+                    "id": "provinces-pmtiles",
+                    "display_name": "SWAP Provinces",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "Province"],
+                            "Anadromous",                                "#00838F",
+                            "Bay Delta and Central Coast",               "#1565C0",
+                            "Cascades and Modoc Plateau",                "#6A1B9A",
+                            "Central Valley and Sierra Nevada Province", "#2E7D32",
+                            "Deserts",                                   "#E65100",
+                            "Marine",                                    "#0277BD",
+                            "North Coast and Klamath",                   "#00695C",
+                            "South Coast",                               "#AD1457",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.25
+                    },
+                    "outline_style": {
+                        "line-color": "#37474F",
+                        "line-width": 1.2
+                    },
+                    "tooltip_fields": ["Province", "ProvinceID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-conservation-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json",
+            "assets": [
+                {
+                    "id": "conservation-units-pmtiles",
+                    "display_name": "SWAP Conservation Units",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "ConsUnitType"],
+                            "Terrestrial",        "#2E7D32",
+                            "Freshwater Aquatic", "#0277BD",
+                            "Marine",             "#01579B",
+                            "Anadromous",         "#00838F",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#263238",
+                        "line-width": 0.7
+                    },
+                    "tooltip_fields": ["Name", "ConsUnitType", "ParentProvinceID"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-sgcn-ranges",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json",
+            "assets": [
+                {
+                    "id": "sgcn-ranges-pmtiles",
+                    "display_name": "SGCN Species Ranges",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "Taxonomic_Group"],
+                            "Amphibians", "#43A047",
+                            "Birds",      "#1E88E5",
+                            "Fish",       "#00838F",
+                            "Mammals",    "#8E24AA",
+                            "Reptiles",   "#F9A825",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#424242",
+                        "line-width": 0.3,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": ["SWAP_Common", "SWAP_Scientific", "Taxonomic_Group"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-noaa-esu-dps",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/noaa-esu-dps/stac-collection.json",
+            "assets": [
+                {
+                    "id": "noaa-esu-dps-pmtiles",
+                    "display_name": "NOAA ESU/DPS (Anadromous Salmonids)",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": ["match", ["get", "Status"],
+                            "Endangered",         "#B71C1C",
+                            "Threatened",         "#EF6C00",
+                            "Species of Concern", "#F9A825",
+                            "Not Warranted",      "#9E9E9E",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#01579B",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": ["ESU_DPS", "ESU_or_DPS", "Class", "Status"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-marine-bioregions",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/marine-bioregions/stac-collection.json",
+            "assets": [
+                {
+                    "id": "marine-bioregions-pmtiles",
+                    "display_name": "SWAP Marine Bioregions",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#0277BD",
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#01579B",
+                        "line-width": 1.0
+                    },
+                    "tooltip_fields": ["Name"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-bay-delta-conservation-unit",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/bay-delta-conservation-unit/stac-collection.json",
+            "assets": [
+                {
+                    "id": "bay-delta-conservation-unit-pmtiles",
+                    "display_name": "SWAP Bay-Delta Conservation Unit",
+                    "group": "SWAP 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#00695C",
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#004D40",
+                        "line-width": 1.2
+                    },
+                    "tooltip_fields": ["Bay_Delta"]
+                }
+            ]
+        },
+        {
+            "collection_id": "swap-2025-targets",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/targets/stac-collection.json"
+        },
+        {
+            "collection_id": "swap-2025-strategies",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/strategies/stac-collection.json"
+        },
+        {
+            "collection_id": "swap-2025-sgcn-species",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species/stac-collection.json"
+        },
+        {
+            "collection_id": "swap-2025-sgcn-species-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species-units/stac-collection.json"
         }
     ]
 }

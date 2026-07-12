@@ -1000,7 +1000,7 @@
         },
         {
             "collection_id": "swap-2025-provinces",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/provinces/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/provinces/stac-collection.json",
             "assets": [
                 {
                     "id": "provinces-pmtiles",
@@ -1031,7 +1031,7 @@
         },
         {
             "collection_id": "swap-2025-conservation-units",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/conservation-units/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/conservation-units/stac-collection.json",
             "assets": [
                 {
                     "id": "conservation-units-pmtiles",
@@ -1058,7 +1058,7 @@
         },
         {
             "collection_id": "swap-2025-sgcn-ranges",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-ranges/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-ranges/stac-collection.json",
             "assets": [
                 {
                     "id": "sgcn-ranges-pmtiles",
@@ -1087,7 +1087,7 @@
         },
         {
             "collection_id": "swap-2025-noaa-esu-dps",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/noaa-esu-dps/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/noaa-esu-dps/stac-collection.json",
             "assets": [
                 {
                     "id": "noaa-esu-dps-pmtiles",
@@ -1114,7 +1114,7 @@
         },
         {
             "collection_id": "swap-2025-marine-bioregions",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/marine-bioregions/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/marine-bioregions/stac-collection.json",
             "assets": [
                 {
                     "id": "marine-bioregions-pmtiles",
@@ -1135,7 +1135,7 @@
         },
         {
             "collection_id": "swap-2025-bay-delta-conservation-unit",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/bay-delta-conservation-unit/stac-collection.json",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/bay-delta-conservation-unit/stac-collection.json",
             "assets": [
                 {
                     "id": "bay-delta-conservation-unit-pmtiles",
@@ -1156,19 +1156,19 @@
         },
         {
             "collection_id": "swap-2025-targets",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/targets/stac-collection.json"
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/targets/stac-collection.json"
         },
         {
             "collection_id": "swap-2025-strategies",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/strategies/stac-collection.json"
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/strategies/stac-collection.json"
         },
         {
             "collection_id": "swap-2025-sgcn-species",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species/stac-collection.json"
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-species/stac-collection.json"
         },
         {
             "collection_id": "swap-2025-sgcn-species-units",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-cdfw/swap-2025/sgcn-species-units/stac-collection.json"
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-species-units/stac-collection.json"
         }
     ]
 }

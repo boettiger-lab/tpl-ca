@@ -194,7 +194,7 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 <section>
     <h2>About this project</h2>
     <p class="lede">A research collaboration between the <a href="https://espm.berkeley.edu" target="_blank" rel="noopener">Department of Environmental Science, Policy, and Management at UC Berkeley</a> and the <a href="https://www.tpl.org" target="_blank" rel="noopener">Trust for Public Land</a>, with support from <a href="https://www.nasa.gov" target="_blank" rel="noopener">NASA</a>.</p>
-    <p>This app helps California legislators, conservation advocates, and researchers explore where public dollars and private partnerships have protected land — and which communities and ecosystems still need investment. The interface lets you toggle dozens of geospatial layers (protected areas, ballot measures, biodiversity, fire history, environmental justice scores) and ask natural-language questions that translate into live SQL queries against a federated catalog of cloud-native datasets.</p>
+    <p>This app helps California legislators, conservation advocates, and researchers explore where public dollars and private partnerships have protected land — and which communities and ecosystems still need investment. The interface lets you toggle dozens of geospatial layers (conserved lands and 30x30 progress, ballot measures, biodiversity and habitat, connectivity, freshwater resources, climate risk, fire history, environmental justice scores) and ask natural-language questions that translate into live SQL queries against a federated catalog of cloud-native datasets.</p>
     <p>This is a <strong>work in progress</strong>. Layers, models, and capabilities are being added and refined.</p>
 </section>
 
@@ -217,9 +217,10 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     </div>
     <p>A few of the actions people most often ask for:</p>
     <ul>
-        <li><strong>Adjust layer styling and transparency:</strong> <em>"Make Wildfire Perimeters 50% transparent"</em>, <em>"Color CalEnviroScreen by pollution percentile"</em>, <em>"Shade WCB projects by funding amount."</em></li>
-        <li><strong>Show, hide, or filter layers:</strong> <em>"Turn on Indigenous Territories and turn off Conservation Easements"</em>, <em>"Show only fires after 2015"</em>, <em>"Hide everything except Conservation Almanac sites in Senate District 2."</em></li>
+        <li><strong>Adjust layer styling and transparency:</strong> <em>"Make Historic Fire Perimeters 50% transparent"</em>, <em>"Color CalEnviroScreen by pollution percentile"</em>, <em>"Shade WCB projects by funding amount."</em></li>
+        <li><strong>Show, hide, or filter layers:</strong> <em>"Turn on Indigenous Territories and turn off Conserved Areas"</em>, <em>"Show only fires after 2015"</em>, <em>"Hide everything except Conservation Almanac sites in Senate District 2."</em></li>
         <li><strong>Zoom and pan:</strong> <em>"Zoom to Assembly District 14"</em>, <em>"Center the map on the Sierra Nevada."</em></li>
+        <li><strong>Query species occurrences and ranges:</strong> <em>"Map the range of the California red-legged frog"</em>, <em>"Which threatened species have GBIF records in Congressional District 16?"</em> — IUCN and GBIF are queried per species and drawn as hex tiles on demand.</li>
         <li><strong>Export query results:</strong> <em>"Give me a CSV of WCB-funded projects in CD-16"</em> — the assistant returns a downloadable table.</li>
         <li><strong>Combine layers in an analysis:</strong> <em>"Which census tracts have both high pollution burden and low species richness?"</em> — the assistant writes the spatial SQL and shows the result.</li>
     </ul>
@@ -239,14 +240,19 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
 
 <section>
     <h2>Data layers &amp; sources</h2>
-    <p>Every layer in the app draws from a public, primary source. Click "STAC" beside any entry to see the full machine-readable metadata — schemas, column descriptions, license, lineage, and download URLs.</p>
+    <p>Every layer in the app draws from a public, primary source. Click "STAC" beside any entry to see the full machine-readable metadata — schemas, column descriptions, license, lineage, and download URLs. Layer groups below mirror the toggle groups in the app.</p>
 
     <div class="layer-group">
-        <h3>Conservation Areas</h3>
+        <h3>Conservation Areas &amp; 30x30 Progress</h3>
         <div class="layer">
-            <div class="name">TPL Conservation Almanac</div>
-            <div class="source">Trust for Public Land — comprehensive record of conservation acquisitions and easements with funding source and program attribution.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-sites/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.tpl.org/conservation-almanac" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">TPL Conservation Almanac (Sites &amp; Funding)</div>
+            <div class="source">Trust for Public Land — comprehensive record of conservation acquisitions and easements with funding source and program attribution. The companion funding table records the individual funding transactions behind each site.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-sites/stac-collection.json" target="_blank" rel="noopener">STAC: Sites</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-funding/stac-collection.json" target="_blank" rel="noopener">STAC: Funding</a><a href="https://www.tpl.org/conservation-almanac" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Conserved Areas, Terrestrial (2025)</div>
+            <div class="source">California Natural Resources Agency / CA Nature — the official 30x30 inventory of terrestrial conservation-area units, classified by GAP status (1–4). Only GAP 1 and 2 count toward the state's 30% conservation goal.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/conserved-areas-terrestrial-2025/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.californianature.ca.gov" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
             <div class="name">Conservation Ballot Measures (LandVote)</div>
@@ -259,19 +265,188 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-tpl/wcb-approved-projects/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wcb.ca.gov" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">CPAD Units &amp; CCED Easements</div>
-            <div class="source">California Protected Areas Database and California Conservation Easement Database, maintained by GreenInfo Network.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cpad/cpad-units-stac-collection.json" target="_blank" rel="noopener">STAC: CPAD</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cpad/cced-stac-collection.json" target="_blank" rel="noopener">STAC: CCED</a><a href="https://www.calands.org" target="_blank" rel="noopener">Source</a></div>
-        </div>
-        <div class="layer">
             <div class="name">Indigenous Territories (LandMark)</div>
             <div class="source">LandMark — global platform for indigenous and community lands, coordinated by the World Resources Institute and partners. Coverage reflects formal legal recognition only.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json" target="_blank" rel="noopener">STAC</a><a href="https://www.landmarkmap.org" target="_blank" rel="noopener">Source</a></div>
         </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Biodiversity: Richness &amp; Habitat</h3>
         <div class="layer">
-            <div class="name">PAD-US 4.1 (Fee &amp; Combined)</div>
-            <div class="source">US Geological Survey Gap Analysis Project — Protected Areas Database of the United States. Fee layer covers fee-owned protected areas; Combined layer adds easements, marine areas, and proclamation boundaries.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json" target="_blank" rel="noopener">STAC: Fee</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-padus/padus-4-1/combined/stac-collection.json" target="_blank" rel="noopener">STAC: Combined</a><a href="https://www.usgs.gov/programs/gap-analysis-project/science/protected-areas" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">MOBI Species Richness</div>
+            <div class="source">NatureServe Map of Biodiversity Importance — modeled species richness across all imperiled taxa in the United States.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.natureserve.org/conservation-tools/data-maps-tools/map-biodiversity-importance" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">NCP Biodiversity Importance</div>
+            <div class="source">Nature's Contributions to People — composite biodiversity-importance indicators; the "× Natural Habitat" variant masks the index to natural-habitat cover.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ncp/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Plant Species Richness &amp; Rarity-Weighted Endemic Richness</div>
+            <div class="source">Kling et al. 2018 (via CA Nature) — California native vascular-plant richness and a rarity-weighted endemic-richness index highlighting concentrations of range-restricted endemics.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/plant-richness/stac-collection.json" target="_blank" rel="noopener">STAC: Richness</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/rarity-weighted-endemic-plant-richness/stac-collection.json" target="_blank" rel="noopener">STAC: Endemic</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">USFWS Critical Habitat (Final &amp; Proposed)</div>
+            <div class="source">US Fish &amp; Wildlife Service — designated and proposed critical habitat for species listed under the Endangered Species Act.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json" target="_blank" rel="noopener">STAC: Final</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usfws/critical-habitat/proposed/stac-collection.json" target="_blank" rel="noopener">STAC: Proposed</a><a href="https://www.fws.gov/program/critical-habitat" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Habitat Types (CWHR 60+ class)</div>
+            <div class="source">CAL FIRE FVEG — California Wildlife Habitat Relationships classification of vegetation into 60+ habitat subtypes.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/cwhr/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/Data/CWHR" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Ecoregions (20-class) &amp; Climate Zones</div>
+            <div class="source">CA Nature 30x30 ecoregions (CNRA / ACE Bailey-derived, 2024) and the Ackerly/Kling 10-class hierarchical-clustering climate zones used in the state's biodiversity and climate-resilience assessments.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/ecoregion/stac-collection.json" target="_blank" rel="noopener">STAC: Ecoregions</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/ca-climate-zones/stac-collection.json" target="_blank" rel="noopener">STAC: Climate Zones</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>ACE Biodiversity (CDFW)</h3>
+        <div class="layer">
+            <div class="name">Terrestrial Biodiversity Summary (ACE v3.0)</div>
+            <div class="source">California Department of Fish and Wildlife — Areas of Conservation Emphasis terrestrial summary (BIOS ds2739): statewide and ecoregional BioRank and Rare Rank, plus native, rare, and endemic species-richness counts for amphibians, reptiles, birds, and mammals.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cdfw/ace/terrestrial-biodiversity-summary/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://wildlife.ca.gov/Data/Analysis/ACE" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Species Occurrences &amp; Ranges (query-driven)</h3>
+        <p class="source" style="margin-top:0;">These are H3-hexed, per-species datasets with no pre-built map layer. Ask the assistant about a species or taxon and it queries the data and renders the result as hex tiles on demand.</p>
+        <div class="layer">
+            <div class="name">IUCN Species Range Maps (2025)</div>
+            <div class="source">IUCN Red List — expert range polygons for ~98,600 species converted to size-stratified H3 hexes. Use for "where does species X live" and "which species' ranges overlap area Y" questions.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-iucn/iucn-ranges-2025/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">GBIF Occurrences (2026-06)</div>
+            <div class="source">Global Biodiversity Information Facility — 3.5 billion georeferenced occurrence records hexed to H3, with taxonomic aggregations. Point observations of where species have actually been recorded. NonCommercial in aggregate.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-gbif/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.gbif.org" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Connectivity &amp; Resilience</h3>
+        <div class="layer">
+            <div class="name">Present-day Connectivity</div>
+            <div class="source">Cameron et al. 2022 — landscape connectivity categories for California based on current-flow modeling across natural lands.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-connectivity/present-day-connectivity/categories/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Climate Migration Routes</div>
+            <div class="source">Schloss et al. 2022 — projected routes species may follow as they track suitable climate across the California landscape.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-connectivity/climate-migration-routes/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Regional Connectivity Linkages</div>
+            <div class="source">South Coast Missing Linkages (Beier et al. 2006) — modeled wildlife-movement linkages connecting core habitat blocks.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-connectivity/regional-connectivity-linkages/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Freshwater Resources</h3>
+        <div class="layer">
+            <div class="name">Freshwater Species Richness (HUC12)</div>
+            <div class="source">TNC California Freshwater Species Database (Howard et al. 2015, CDFW BIOS ds1197) — freshwater species, vulnerable-species, and listed-species counts per subwatershed.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/freshwater-species-richness/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Groundwater-Dependent Ecosystems (Vegetation &amp; Wetlands)</div>
+            <div class="source">Klausmeyer et al. 2018 (TNC / CDFW) — vegetation and wetland features that rely on groundwater, used in Sustainable Groundwater Management Act planning.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/groundwater-dependent-ecosystems/vegetation/stac-collection.json" target="_blank" rel="noopener">STAC: Vegetation</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/groundwater-dependent-ecosystems/wetlands/stac-collection.json" target="_blank" rel="noopener">STAC: Wetlands</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Watersheds (HUC8 Subbasins &amp; HUC12 Subwatersheds)</div>
+            <div class="source">USGS Watershed Boundary Dataset — nested hydrologic-unit boundaries for basin-scale (HUC8) and subwatershed-scale (HUC12) analysis.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu8/stac-collection.json" target="_blank" rel="noopener">STAC: HUC8</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu12/stac-collection.json" target="_blank" rel="noopener">STAC: HUC12</a><a href="https://www.usgs.gov/national-hydrography/watershed-boundary-dataset" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Streams (NHD by Order &amp; Perennial)</div>
+            <div class="source">USGS National Hydrography Dataset — stream network classified by Strahler order (headwaters through rivers) and the subset of perennial streams.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usgs-nhd/streams-by-order/stac-collection.json" target="_blank" rel="noopener">STAC: By Order</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-usgs-nhd/perennial-streams/stac-collection.json" target="_blank" rel="noopener">STAC: Perennial</a><a href="https://www.usgs.gov/national-hydrography" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Wetlands</h3>
+        <div class="layer">
+            <div class="name">National Wetlands Inventory (NWI)</div>
+            <div class="source">US Fish &amp; Wildlife Service — the authoritative national wetlands map, classified by wetland type (freshwater emergent, forested/shrub, pond, lake, riverine, estuarine and marine).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.fws.gov/program/national-wetlands-inventory" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Climate-Related Risks</h3>
+        <div class="layer">
+            <div class="name">Sea-Level Rise Inundation (5 ft)</div>
+            <div class="source">NOAA Office for Coastal Management — modeled coastal inundation at 5 feet of sea-level rise.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-hazard/sea-level-rise/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://coast.noaa.gov/slr/" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">FEMA Flood Hazard Zones (NFHL)</div>
+            <div class="source">FEMA National Flood Hazard Layer — Special Flood Hazard Areas (1% and 0.2% annual-chance zones) and coastal high-hazard zones.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-hazard/flood-hazard/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.fema.gov/flood-maps/national-flood-hazard-layer" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Mid-Century Habitat Climate Exposure</div>
+            <div class="source">Thorne et al. 2016 — projected mid-century climate exposure of California natural habitats under downscaled climate models.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-hazard/mid-century-habitat-climate-exposure/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Fire</h3>
+        <div class="layer">
+            <div class="name">Historic Fire Perimeters (1878–2025)</div>
+            <div class="source">CAL FIRE Fire and Resource Assessment Program (FRAP) — official California wildfire perimeter history, 2025 release.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2025/firep/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://frap.fire.ca.gov" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Prescribed Burns</div>
+            <div class="source">CAL FIRE FRAP — treated-fuels and prescribed-burn history (2024 release).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2024/rxburn/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://frap.fire.ca.gov" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Nature-Based Solutions &amp; Agriculture</h3>
+        <div class="layer">
+            <div class="name">Important Farmland (FMMP 2022)</div>
+            <div class="source">California Department of Conservation Farmland Mapping and Monitoring Program — Prime, Unique, Statewide-Importance, and Local-Importance farmland plus grazing land.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ca30x30/fmmp-2022/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.conservation.ca.gov/dlrp/fmmp" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Land Cover</h3>
+        <div class="layer">
+            <div class="name">Copernicus Global Land Cover (CGLS-LC100 2019)</div>
+            <div class="source">Copernicus Global Land Service v3.0.1 — 100m global land-cover classification (23 classes, FAO LCCS scheme).</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://land.copernicus.eu/global/products/lc" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Carbon</h3>
+        <div class="layer">
+            <div class="name">Irrecoverable Carbon (2024)</div>
+            <div class="source">The Nature Conservancy &amp; Conservation International (Noon et al., <em>Nature Sustainability</em> 2022) — ecosystem carbon stocks that, if lost, cannot be recovered by 2050.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-carbon/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.conservation.org/projects/irrecoverable-carbon" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Geology</h3>
+        <div class="layer">
+            <div class="name">Sierra Nevada Geologic Units</div>
+            <div class="source">California Geological Survey — Sierra Nevada Earth Science Atlas (CGS GDM 009): map-unit polygons classified by geologic material and age.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-cgs/sierra-nevada-atlas/map-unit-polys/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.conservation.ca.gov/cgs" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
@@ -315,48 +490,25 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     </div>
 
     <div class="layer-group">
-        <h3>Carbon</h3>
+        <h3>Trails</h3>
         <div class="layer">
-            <div class="name">Irrecoverable Carbon (2024)</div>
-            <div class="source">The Nature Conservancy &amp; Conservation International (Noon et al., <em>Nature Sustainability</em> 2022) — ecosystem carbon stocks that, if lost, cannot be recovered by 2050.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-carbon/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.conservation.org/projects/irrecoverable-carbon" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Federal Trails (USFS + NPS + BLM)</div>
+            <div class="source">U.S. Federal Trails Network (2026) — USFS National Forest System Trails, NPS public trails, and BLM Ground Transportation Linear Features, including National Scenic and Historic Trails.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
         </div>
     </div>
 
     <div class="layer-group">
-        <h3>Biodiversity</h3>
+        <h3>State Wildlife Action Plan (SWAP 2025)</h3>
         <div class="layer">
-            <div class="name">MOBI Species Richness</div>
-            <div class="source">NatureServe Map of Biodiversity Importance — modeled species richness across all imperiled taxa in the United States.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.natureserve.org/conservation-tools/data-maps-tools/map-biodiversity-importance" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">SWAP Conservation Framework</div>
+            <div class="source">California Department of Fish and Wildlife — the 2025 State Wildlife Action Plan geography: provinces, terrestrial/freshwater/marine/anadromous conservation units, the Bay-Delta unit, and marine bioregions.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-swap/california/swap-2025/provinces/stac-collection.json" target="_blank" rel="noopener">STAC: Provinces</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-swap/california/swap-2025/conservation-units/stac-collection.json" target="_blank" rel="noopener">STAC: Conservation Units</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-swap/california/swap-2025/marine-bioregions/stac-collection.json" target="_blank" rel="noopener">STAC: Marine Bioregions</a></div>
         </div>
         <div class="layer">
-            <div class="name">IUCN Species Richness (2025)</div>
-            <div class="source">International Union for Conservation of Nature — Red List range maps rasterised to species-count grids for all terrestrial vertebrate taxa, with per-taxon breakdowns for mammals and birds.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-iucn/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">Source</a></div>
-        </div>
-        <div class="layer">
-            <div class="name">NCP Biodiversity Importance</div>
-            <div class="source">Nature's Contributions to People — composite biodiversity-importance indicators; the "× Natural Habitat" variant masks the index to natural-habitat cover.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-ncp/stac-collection.json" target="_blank" rel="noopener">STAC</a></div>
-        </div>
-    </div>
-
-    <div class="layer-group">
-        <h3>Demographics</h3>
-        <div class="layer">
-            <div class="name">Population Density (GHS-POP 2020)</div>
-            <div class="source">Global Human Settlement Layer (European Commission JRC) — 2020 population count at ~90m resolution, R2023A release.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-high-seas/ghs-pop-2020/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://human-settlement.emergency.copernicus.eu/ghs_pop.php" target="_blank" rel="noopener">Source</a></div>
-        </div>
-    </div>
-
-    <div class="layer-group">
-        <h3>Land Cover</h3>
-        <div class="layer">
-            <div class="name">Copernicus Global Land Cover (CGLS-LC100 2019)</div>
-            <div class="source">Copernicus Global Land Service v3.0.1 — 100m global land-cover classification (23 classes, FAO LCCS scheme).</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://land.copernicus.eu/global/products/lc" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">Species of Greatest Conservation Need (SGCN)</div>
+            <div class="source">CDFW — SGCN species ranges by taxonomic group, NOAA ESU/DPS ranges for anadromous salmonids, and the SGCN species/target/strategy tables that link species to conservation actions.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-ranges/stac-collection.json" target="_blank" rel="noopener">STAC: SGCN Ranges</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-swap/california/swap-2025/noaa-esu-dps/stac-collection.json" target="_blank" rel="noopener">STAC: NOAA ESU/DPS</a><a href="https://wildlife.ca.gov/SWAP" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
@@ -366,29 +518,6 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
             <div class="name">Community Water System Service Areas (EPA SAB v3)</div>
             <div class="source">US EPA Office of Research and Development — service-area boundaries for 44,656 community drinking-water systems (CWS), covering ~99% of the US population served by community water systems. Approximately 60% are authoritative boundaries from state primacy agencies; the remainder are EPA-modeled (the <code>Model_Method</code> field records which). Each polygon carries a <code>PWSID</code> for joining to SDWIS.</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-epa-water/epa-sab-v3/cws/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.epa.gov/ground-water-and-drinking-water/community-water-system-service-area-boundaries" target="_blank" rel="noopener">Source</a></div>
-        </div>
-    </div>
-
-    <div class="layer-group">
-        <h3>Wetlands</h3>
-        <div class="layer">
-            <div class="name">Wetland Type (GLWD v2)</div>
-            <div class="source">Global Lakes and Wetlands Database v2 (Lehner et al.) — 33 wetland classes derived from a global synthesis of inventories and remote sensing.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-wetlands/glwd/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.worldwildlife.org/publications/global-lakes-and-wetlands-database-lakes-and-wetlands-grid-level-3" target="_blank" rel="noopener">Source</a></div>
-        </div>
-    </div>
-
-    <div class="layer-group">
-        <h3>Fire</h3>
-        <div class="layer">
-            <div class="name">Wildfire Perimeters &amp; Prescribed Burns</div>
-            <div class="source">CAL FIRE Fire and Resource Assessment Program (FRAP) — official California fire history (perimeters and treated-fuels), 2024 release.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2024/firep/stac-collection.json" target="_blank" rel="noopener">STAC: Perimeters</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/calfire-2024/rxburn/stac-collection.json" target="_blank" rel="noopener">STAC: RxBurns</a><a href="https://frap.fire.ca.gov" target="_blank" rel="noopener">Source</a></div>
-        </div>
-        <div class="layer">
-            <div class="name">USGS Wildland Fires (1878–2020)</div>
-            <div class="source">USGS Wildland Fire Combined Dataset 2021 — a national, deduplicated synthesis of wildfire perimeters from federal, state, and tribal sources extending back to the late 1800s.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-fire/usgs-fires-2021/combined/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81" target="_blank" rel="noopener">Source</a></div>
         </div>
     </div>
 
@@ -417,16 +546,30 @@ p.lede { font-size: 1.05rem; color: var(--ink-soft); }
     </div>
 
     <div class="layer-group">
-        <h3>Political Boundaries</h3>
+        <h3>Demographics</h3>
+        <div class="layer">
+            <div class="name">Population Density (GHS-POP 2020)</div>
+            <div class="source">Global Human Settlement Layer (European Commission JRC) — 2020 population count at ~90m resolution, R2023A release.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-population/ghs-pop-2020/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://human-settlement.emergency.copernicus.eu/ghs_pop.php" target="_blank" rel="noopener">Source</a></div>
+        </div>
+    </div>
+
+    <div class="layer-group">
+        <h3>Political &amp; Reference Boundaries</h3>
         <div class="layer">
             <div class="name">Congressional, Assembly &amp; Senate Districts</div>
             <div class="source">US Census Bureau TIGER/Line — 119th Congress districts (2024) and California State Legislative Districts (2025).</div>
             <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/cd/stac-collection.json" target="_blank" rel="noopener">STAC: CD</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2025/sldl/stac-collection.json" target="_blank" rel="noopener">STAC: Assembly</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2025/sldu/stac-collection.json" target="_blank" rel="noopener">STAC: Senate</a><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target="_blank" rel="noopener">Source</a></div>
         </div>
         <div class="layer">
-            <div class="name">California Census Tracts (2024)</div>
-            <div class="source">US Census Bureau TIGER/Line 2024 — California tract boundaries, the standard sub-county geography used by ACS, CalEnviroScreen, SVI, and the DWR DAC layers.</div>
-            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target="_blank" rel="noopener">Source</a></div>
+            <div class="name">California Cities &amp; Towns</div>
+            <div class="source">US Census Bureau TIGER/Line 2024 Place boundaries — California incorporated places (cities, towns, villages). The map layer is filtered to incorporated places; the assistant can also query Census Designated Places (CDPs) from the same dataset.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/place/stac-collection.json" target="_blank" rel="noopener">STAC</a><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target="_blank" rel="noopener">Source</a></div>
+        </div>
+        <div class="layer">
+            <div class="name">Counties, Census Tracts &amp; State Boundary</div>
+            <div class="source">US Census Bureau TIGER/Line 2024 — California county, tract, and state boundaries. Tracts are the standard sub-county geography used by ACS, CalEnviroScreen, SVI, and the DWR DAC layers.</div>
+            <div class="links"><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json" target="_blank" rel="noopener">STAC: County</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json" target="_blank" rel="noopener">STAC: Tract</a><a href="https://radiantearth.github.io/stac-browser/#/external/s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json" target="_blank" rel="noopener">STAC: State</a></div>
         </div>
     </div>
 

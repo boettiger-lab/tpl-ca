@@ -3,6 +3,39 @@
     "titiler_url": "https://titiler.nrp-nautilus.io",
     "mcp_url": "https://duckdb-mcp.nrp-nautilus.io/mcp",
     "draw_enabled": true,
+    "upload_enabled": true,
+    "charts": { "enabled": true },
+    "header": {
+        "enabled": true,
+        "mode": "solid",
+        "title": "TPL California Protected Lands Explorer",
+        "partner": {
+            "src": "assets/tpl-logo.png",
+            "alt": "Trust for Public Land",
+            "href": "https://www.tpl.org/"
+        }
+    },
+    "theme": {
+        "mode": "light",
+        "primary": "#006837",
+        "surface": "#f5faf1",
+        "text": "#362229",
+        "panel": "rgba(255, 255, 255, 0.94)",
+        "backdrop": "#e5f1e0",
+        "tokens": {
+            "--control-disabled-bg": "#cee4c5",
+            "--control-disabled-fg": "#2f4a2c",
+            "--focus-ring": "#004d29",
+            "--control-focus-fg": "#006837",
+            "--control-focus-bg": "rgba(0, 104, 55, 0.12)",
+            "--chrome-accent": "rgba(57, 181, 74, 0.8)",
+            "--chrome-accent-wash": "rgba(57, 181, 74, 0.12)",
+            "--chat-tool-bg": "rgba(245, 250, 241, 0.7)",
+            "--chat-thinking-bg": "rgba(206, 228, 197, 0.45)",
+            "--chat-thinking-fg": "#2f4a2c",
+            "--chat-accent-fg": "#006837"
+        }
+    },
     "auto_approve": true,
     "sidebar": {
         "enabled": true,

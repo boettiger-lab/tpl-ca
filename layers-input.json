@@ -8,12 +8,7 @@
     "header": {
         "enabled": true,
         "mode": "solid",
-        "title": "TPL California Protected Lands Explorer",
-        "partner": {
-            "src": "assets/tpl-logo.png",
-            "alt": "Trust for Public Land",
-            "href": "https://www.tpl.org/"
-        }
+        "title": "TPL California Protected Lands Explorer"
     },
     "theme": {
         "mode": "light",

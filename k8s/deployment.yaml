@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: biodiversity
+  namespace: schmidtdse
   name: tpl-ca
   labels:
     app: tpl-ca

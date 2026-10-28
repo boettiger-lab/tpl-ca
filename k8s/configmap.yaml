@@ -7,7 +7,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: biodiversity
+  namespace: schmidtdse
   name: tpl-ca-config
 data:
   config.template.json: |
@@ -90,7 +90,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: biodiversity
+  namespace: schmidtdse
   name: tpl-ca-nginx
 data:
   nginx.conf.template: |

@@ -722,6 +722,11 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/conservation-almanac-2024-funding/stac-collection.json"
         },
         {
+            "collection_id": "ca-grant-opportunities",
+            "preload": true,
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-tpl/ca-grant-opportunities/stac-collection.json"
+        },
+        {
             "collection_id": "ghs-pop-2020",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-population/ghs-pop-2020/stac-collection.json",
             "assets": [

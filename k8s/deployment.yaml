@@ -64,8 +64,8 @@ spec:
         - name: PROXY_KEY
           valueFrom:
             secretKeyRef:
-              name: open-llm-proxy-app-keys
-              key: tpl-ca
+              name: open-llm-proxy-namespace-keys
+              key: public
               optional: true
         command:
         - sh

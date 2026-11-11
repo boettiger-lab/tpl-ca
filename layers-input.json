@@ -84,9 +84,7 @@
                     "id": "v2-irrecoverable-2024-cog",
                     "display_name": "Irrecoverable Carbon (2024)",
                     "group": "Carbon",
-                    "visible": false,
-                    "colormap": "reds",
-                    "rescale": "0,150"
+                    "visible": false
                 }
             ]
         },
@@ -99,8 +97,6 @@
                     "display_name": "MOBI Species Richness",
                     "group": "Biodiversity",
                     "visible": false,
-                    "colormap": "ylgn",
-                    "rescale": "1,32",
                     "legend_label": "Species richness (1–32)"
                 }
             ]
@@ -462,8 +458,6 @@
                     "display_name": "Population Density (GHS-POP 2020)",
                     "group": "Demographics",
                     "visible": false,
-                    "colormap": "magma",
-                    "rescale": "0,200",
                     "legend_label": "Persons per ~90m cell (0–200)"
                 }
             ]
@@ -477,8 +471,6 @@
                     "display_name": "NCP Biodiversity Importance",
                     "group": "Biodiversity",
                     "visible": false,
-                    "colormap": "viridis",
-                    "rescale": "0,1",
                     "legend_label": "NCP index (0–1)"
                 },
                 {
@@ -501,7 +493,6 @@
                     "display_name": "Land Cover (Copernicus CGLS 2019)",
                     "group": "Land Cover",
                     "visible": false,
-                    "legend_type": "categorical",
                     "legend_label": "CGLS land-cover class"
                 }
             ]
@@ -684,8 +675,7 @@
                     "id": "ca-climate-zones-cog",
                     "display_name": "Climate Zones (Ackerly/Kling 10-class)",
                     "group": "Climate Zones",
-                    "visible": false,
-                    "legend_type": "categorical"
+                    "visible": false
                 }
             ]
         },
@@ -710,8 +700,7 @@
                     "id": "cwhr-cog",
                     "display_name": "Habitat Types (CWHR 60+ class)",
                     "group": "Habitat Types",
-                    "visible": false,
-                    "legend_type": "categorical"
+                    "visible": false
                 }
             ]
         },
@@ -874,8 +863,6 @@
                     "display_name": "Plant Species Richness",
                     "group": "Biodiversity",
                     "visible": false,
-                    "colormap": "greens",
-                    "rescale": "16,452",
                     "legend_label": "species"
                 }
             ]
@@ -889,8 +876,6 @@
                     "display_name": "Rarity-Weighted Endemic Plant Richness",
                     "group": "Biodiversity",
                     "visible": false,
-                    "colormap": "magma",
-                    "rescale": "0,0.0115",
                     "legend_label": "endemism index"
                 }
             ]
@@ -916,8 +901,7 @@
                     "id": "present-day-connectivity-categories-cog",
                     "display_name": "Present-day Connectivity (categories)",
                     "group": "Connectivity & Resilience",
-                    "visible": false,
-                    "legend_type": "categorical"
+                    "visible": false
                 }
             ]
         },
@@ -929,8 +913,7 @@
                     "id": "climate-migration-routes-cog",
                     "display_name": "Climate Migration Routes",
                     "group": "Connectivity & Resilience",
-                    "visible": false,
-                    "legend_type": "categorical"
+                    "visible": false
                 }
             ]
         },
@@ -1011,8 +994,6 @@
                     "display_name": "Mid-Century Habitat Climate Exposure (CNRM, warm-wet)",
                     "group": "Climate-Related Risks",
                     "visible": false,
-                    "colormap": "reds",
-                    "rescale": "0.15,1",
                     "legend_label": "exposure index"
                 }
             ]

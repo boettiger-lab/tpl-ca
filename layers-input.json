@@ -128,8 +128,8 @@
             ]
         },
         {
-            "collection_id": "calfire-2024-rxburn",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2024/rxburn/stac-collection.json",
+            "collection_id": "calfire-2025-rxburn",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/calfire-2025/rxburn/stac-collection.json",
             "assets": [
                 {
                     "id": "rxburn-pmtiles",
@@ -1007,7 +1007,7 @@
                     "display_name": "Historic Fire Perimeters (1878–2025)",
                     "group": "Fire",
                     "visible": false,
-                    "tooltip_fields": ["FIRE_NAME", "YEAR_", "GIS_ACRES", "AGENCY"]
+                    "tooltip_fields": ["FIRE_NAME", "YEAR_", "GIS_ACRES", "AGENCY", "CAUSE"]
                 }
             ]
         },

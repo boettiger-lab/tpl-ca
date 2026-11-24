@@ -904,7 +904,7 @@
           "tooltip_fields": [
             "SWAP_Common",
             "SWAP_Scientific",
-            "Taxonomic_Group"
+            "TaxGroup"
           ]
         }
       ]
@@ -964,14 +964,6 @@
     {
       "collection_id": "swap-2025-strategies",
       "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/strategies/stac-collection.json"
-    },
-    {
-      "collection_id": "swap-2025-sgcn-species",
-      "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-species/stac-collection.json"
-    },
-    {
-      "collection_id": "swap-2025-sgcn-species-units",
-      "collection_url": "https://s3-west.nrp-nautilus.io/public-swap/california/swap-2025/sgcn-species-units/stac-collection.json"
     },
     {
       "collection_id": "iucn-ranges-2025",
